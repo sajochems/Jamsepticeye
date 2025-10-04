@@ -1,0 +1,36 @@
+[
+    {
+        "trigger": 3,
+        "event_type": "upcoming_slowdown",
+        "required_alive": ["Rower1", "Rower2"],
+        "must_die": [],
+        "timer": 1,
+        "amount": 2,
+        "reason": "Storm hits the boat, slows it if rowers are alive"
+    },
+    {
+        "trigger": 4,
+        "event_type": "upcoming_death",
+        "required_alive": ["Cook"],
+        "must_die": ["Rich"],
+        "timer": 2,
+        "reason": "Food spoils, causing Rich to die if Cook was present"
+    },
+    {
+        "trigger": 5,
+        "event_type": "saveable_death",
+        "required_alive": ["FirstMate"],
+        "must_die": ["Poet", "Dog"],
+        "timer": 1,
+        "reason": "Pirates attack! If Poet and Dog survive, game ends"
+    },
+    {
+        "trigger": 2,
+        "event_type": "saveable_slowdown",
+        "required_alive": ["Rower1", "Rower2"],
+        "must_die": [],
+        "timer": 0,
+        "amount": 1,
+        "reason": "Calm seas give a temporary speed boost"
+    }
+]

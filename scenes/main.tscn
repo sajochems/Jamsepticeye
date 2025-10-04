@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf6iwnwiinecl"]
+
+[ext_resource type="Script" uid="uid://p8bqhkah8l3t" path="res://scripts/main.gd" id="1_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://dt3sc13gk1nww" path="res://scenes/character_info_window.tscn" id="1_jjgbg"]
+[ext_resource type="Texture2D" uid="uid://dqu0qt4dlama8" path="res://assets/sprites/Copy of Railings.JPEG.jpg" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bwsvu5h8gcxh6" path="res://Scenes/game_over_window.tscn" id="3_sugp2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
+font_size = 24
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_bo1nx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="BoatBackground" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 64)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jyhfs")
+
+[node name="CharacterRows" type="Node2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="CharacterInfoWindow" parent="UI" instance=ExtResource("1_jjgbg")]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOverWindow" parent="UI" instance=ExtResource("3_sugp2")]
+
+[node name="RoundLabel" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Round: 0"
+label_settings = SubResource("LabelSettings_jyhfs")
+
+[node name="LogPanel" type="RichTextLabel" parent="UI"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -98.0
+offset_right = 300.0
+offset_bottom = 2.0
+grow_vertical = 0
+text = "LogPanel"

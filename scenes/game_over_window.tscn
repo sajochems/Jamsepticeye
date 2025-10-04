@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwsvu5h8gcxh6"]
+
+[ext_resource type="Script" uid="uid://dp72am537ko7a" path="res://scripts/game_over_window.gd" id="1_jcb1m"]
+
+[node name="GameOverWindow" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jcb1m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ReasonLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
