@@ -1,11 +1,19 @@
 extends Control
 
+@onready var title_label := $Panel/Title
 @onready var reason_label := $Panel/ReasonLabel
 @onready var restart_button := $Panel/RestartButton
 
-func show_game_over(reason: String):
+signal restart_pressed
+
+func _ready():
+	restart_button.pressed.connect(Callable(self, "_on_RestartButton_pressed"))
+
+func show_game_over(title: String, reason: String):
+	title_label.text = title
 	reason_label.text = reason
 	show()
 
 func _on_RestartButton_pressed():
-	get_tree().reload_current_scene()
+	hide()
+	emit_signal("restart_pressed")

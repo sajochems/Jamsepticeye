@@ -40,6 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameOverWindow" parent="UI" instance=ExtResource("3_sugp2")]
+visible = false
 
 [node name="RoundLabel" type="Label" parent="UI"]
 offset_right = 40.0
@@ -51,8 +52,8 @@ label_settings = SubResource("LabelSettings_jyhfs")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -98.0
-offset_right = 300.0
+offset_top = -96.0
+offset_right = 406.0
 offset_bottom = 2.0
 grow_vertical = 0
 text = "LogPanel"

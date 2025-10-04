@@ -23,20 +23,23 @@ func _ready():
 	load_events()
 	load_characters()
 	update_round_label()
-
+	
+	# Connect GameOverWindow restart signal
+	game_over_window.connect("restart_pressed", Callable(self, "restart_game"))
+	
 func load_events():
 	var f1 := FileAccess.open(DEATH_EVENTS_JSON, FileAccess.READ)
 	if f1:
 		var parsed: Variant = JSON.parse_string(f1.get_as_text())
 		if typeof(parsed) == TYPE_ARRAY:
 			death_events = parsed
-
+			
 	var f2 := FileAccess.open(TIMED_EVENTS_JSON, FileAccess.READ)
 	if f2:
 		var parsed: Variant = JSON.parse_string(f2.get_as_text())
 		if typeof(parsed) == TYPE_ARRAY:
 			timed_events = parsed
-
+			
 func load_characters():
 	var file := FileAccess.open(CHARACTERS_JSON, FileAccess.READ)
 	if not file:
@@ -51,113 +54,171 @@ func load_characters():
 	
 	for char_data in parsed:
 		spawn_character(char_data)
-
+		
 func spawn_character(char_data: Dictionary):
 	var character := CharacterScene.instantiate()
 	
+	# --- Assign character metadata ---
 	character.character_name = char_data.get("name", "Unknown")
 	character.character_tag = char_data.get("tag", "")
 	character.age = char_data.get("age", 0)
 	character.occupation = char_data.get("occupation", "")
 	character.description = char_data.get("description", "")
 	
+	# --- Load sprite or fallback to default ---
 	var sprite_path = char_data.get("sprite", DEFAULT_SPRITE)
 	if not ResourceLoader.exists(sprite_path):
 		sprite_path = DEFAULT_SPRITE
-	
 	var tex := load(sprite_path)
 	if tex and character.has_node("Sprite2D"):
 		character.get_node("Sprite2D").texture = tex
+		
+	# --- Handle normalized coordinates ---
+	# If values are <= 1, treat them as normalized; otherwise as absolute pixels
+	var viewport_size = get_viewport().get_visible_rect().size
+	var x = char_data.get("x", 0)
+	var y = char_data.get("y", 0)
 	
-	character.position = Vector2(char_data.get("x", 0), char_data.get("y", 0))
+	var pos: Vector2
+	if x <= 1.0 and y <= 1.0:
+		pos = Vector2(x * viewport_size.x, y * viewport_size.y)
+	else:
+		pos = Vector2(x, y)
+		
+	pos -= viewport_size / 2.0
+	character.position = pos
+	
 	character.connect("clicked", Callable(self, "_on_character_clicked"))
-	
 	$CharacterRows.add_child(character)
+	
 	characters[character.character_tag] = character
 	alive_tags.append(character.character_tag)
-
+	
 func _on_character_clicked(character_ref):
 	if not game_over:
 		info_window.show_character(character_ref, Callable(self, "_on_character_killed"))
-
+		
 func _on_character_killed(character_ref):
 	if game_over or not character_ref.alive:
 		return
-
+		
 	character_ref.alive = false
 	character_ref.hide()
 	alive_tags.erase(character_ref.character_tag)
-
+	
 	round += 1
 	update_round_label()
 	add_log("Round %d: %s was killed" % [round, character_ref.character_name])
 	
+	# Queue death-triggered events
 	for ev in death_events:
 		if ev.get("trigger", "") == character_ref.character_tag:
 			queue_event(ev)
-
+			
+	# Queue timed events that start this round
 	for ev in timed_events:
 		if ev.get("trigger_round", -1) == round:
 			queue_event(ev)
-
+			
+	# After each death, evaluate active timed events
 	tick_events()
-
+	
 func queue_event(event: Dictionary):
 	var new_event = event.duplicate(true)
-	new_event["remaining"] = event.get("timer", 0)
+	new_event["remaining"] = event.get("timer", 0) + 1
 	active_events.append(new_event)
-	add_log("Event queued: %s" % new_event.get("reason", ""))
-
+	add_log("Event triggered: %s" % new_event.get("description", "No description"))
+		
 func tick_events():
 	var still_active: Array = []
 	for ev in active_events:
+		if ev["remaining"] > 0:
+			add_log("Ongoing event: %s (Remaining: %d rounds)" % [ev.get("description", "No description"), ev["remaining"] - 1] )
 		ev["remaining"] = int(ev.get("remaining", 0)) - 1
 		if ev["remaining"] <= 0:
 			evaluate_event(ev)
 		else:
 			still_active.append(ev)
 	active_events = still_active
-
+	
 func evaluate_event(ev: Dictionary):
 	var ev_type = ev.get("event_type", "")
 	var must_die: Array = ev.get("must_die", [])
 	var required_alive: Array = ev.get("required_alive", [])
-	var reason: String = ev.get("reason", "Unknown")
+	var title: String = ev.get("title", "Unknown Event")
+	var description: String = ev.get("description", "No description")
+	var success_reason: String = ev.get("success_reason", "")
+	var failure_reason: String = ev.get("failure_reason", "Unknown Failure")
 
+	var event_failed = false
+	
 	match ev_type:
 		"upcoming_death":
 			if intersects(required_alive, alive_tags):
-				trigger_game_over(reason)
+				trigger_game_over(title, failure_reason)
 		"saveable_death":
 			if all_dead(must_die) and not intersects(required_alive, alive_tags):
-				trigger_game_over(reason)
+				trigger_game_over(title, failure_reason)
 		"upcoming_slowdown":
 			if intersects(required_alive, alive_tags):
-				add_log("Slowdown occurred: %s" % reason)
+				add_log("Event succeeded: %s" % success_reason)
+			else:
+				add_log("Event failed: %s" % failure_reason)
+				event_failed = true
 		"saveable_slowdown":
 			if all_dead(must_die) and not intersects(required_alive, alive_tags):
-				add_log("Slowdown occurred: %s" % reason)
-
-func trigger_game_over(reason: String):
+				add_log("Event succeeded: %s" % success_reason)
+			else:
+				add_log("Event failed: %s" % failure_reason)
+				event_failed = true
+				
+	#TODO Add logic for event_failed = true to actually do something.
+		
+func trigger_game_over(title: String, reason: String):
 	game_over = true
-	game_over_window.show_game_over(reason)
-
-
+	game_over_window.show_game_over(title, reason)
+	
 func update_round_label():
 	round_label.text = "Round: %d" % round
-
+	
 func add_log(msg: String):
 	log_panel.append_text(msg + "\n")
-
+	
 func intersects(list1: Array, list2: Array) -> bool:
 	for item in list1:
 		if list2.has(item):
 			return true
 	return false
-
+	
 func all_dead(tags: Array) -> bool:
 	for t in tags:
 		if alive_tags.has(t):
 			return false
 	return true
 	
+func restart_game():
+	# Hide windows
+	game_over_window.hide()
+	info_window.hide()
+	
+	# Reset game state
+	round = 0
+	update_round_label()
+	
+	active_events.clear()
+	alive_tags.clear()
+	
+	# Reset all characters
+	for tag in characters.keys():
+		var char_ref = characters[tag]
+		char_ref.alive = true
+		char_ref.show()
+		
+	# Repopulate alive_tags
+	for tag in characters.keys():
+		alive_tags.append(tag)
+	
+	# Clear log
+	log_panel.clear()
+	
+	add_log("Game restarted.")

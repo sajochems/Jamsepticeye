@@ -1,136 +1,178 @@
 [
-    {
-        "trigger": "Doctor",
-        "event_type": "upcoming_slowdown",
-        "required_alive": ["Jack"],
-        "must_die": ["Jack"],
-        "timer": 2,
-        "amount": 1,
-        "reason": "Nobody cured Jack's septic eye → boat slows if Jack survives"
-    },
-    {
-        "trigger": "Doctor",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rich"],
-        "must_die": ["Rich"],
-        "timer": 1,
-        "reason": "Rich will bribe others to commit mutiny if Doctor dies"
-    },
-    {
-        "trigger": "Mom",
-        "event_type": "saveable_slowdown",
-        "required_alive": [],
-        "must_die": [],
-        "timer": 0,
-        "amount": 1,
-        "reason": "Mom dies → boat slows"
-    },
-    {
-        "trigger": "Child",
-        "event_type": "upcoming_death",
-        "required_alive": ["Mom", "Priest"],
-        "must_die": ["Mom", "Priest"],
-        "timer": 1,
-        "reason": "Child dies → Mom/Priest go on rampage"
-    },
-    {
-        "trigger": "Rower1",
-        "event_type": "saveable_slowdown",
-        "required_alive": [],
-        "must_die": [],
-        "timer": 0,
-        "amount": 1,
-        "reason": "Rower1 dies → boat slows"
-    },
-    {
-        "trigger": "Rower1",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rower2"],
-        "must_die": ["Rower2"],
-        "timer": 2,
-        "reason": "Rower1 dies → Rower2 angry"
-    },
-    {
-        "trigger": "Rower1",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rich"],
-        "must_die": ["Rich"],
-        "timer": 1,
-        "reason": "Rich will bribe others to commit mutiny if Rower1 dies"
-    },
-    {
-        "trigger": "Rower2",
-        "event_type": "saveable_slowdown",
-        "required_alive": [],
-        "must_die": [],
-        "timer": 0,
-        "amount": 1,
-        "reason": "Rower2 dies → boat slows"
-    },
-    {
-        "trigger": "Rower2",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rich"],
-        "must_die": ["Rich"],
-        "timer": 1,
-        "reason": "Rich will bribe others to commit mutiny if Rower2 dies"
-    },
-    {
-        "trigger": "Dog",
-        "event_type": "saveable_death",
-        "required_alive": ["Doctor", "Jack"],
-        "must_die": ["Doctor", "Jack"],
-        "timer": 2,
-        "reason": "Dog dies → poison spreads if no Doctor/Jack alive"
-    },
-    {
-        "trigger": "Cook",
-        "event_type": "saveable_slowdown",
-        "required_alive": ["Poet"],
-        "must_die": ["Poet"],
-        "timer": 0,
-        "amount": 1,
-        "reason": "Poet will cook instead if Cook dies"
-    },
-    {
-        "trigger": "FirstMate",
-        "event_type": "saveable_slowdown",
-        "required_alive": [],
-        "must_die": [],
-        "timer": 0,
-        "amount": 2,
-        "reason": "FirstMate dies → boat slows, cannot steer properly"
-    },
-    {
-        "trigger": "FirstMate",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rich"],
-        "must_die": ["Rich"],
-        "timer": 1,
-        "reason": "Rich will bribe others to commit mutiny if FirstMate dies"
-    },
-    {
-        "trigger": "Priest",
-        "event_type": "upcoming_death",
-        "required_alive": ["FirstMate"],
-        "must_die": ["FirstMate"],
-        "timer": 2,
-        "reason": "Mutiny risk if Priest dies and FirstMate alive"
-    },
-    {
-        "trigger": "Priest",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rich"],
-        "must_die": ["Rich"],
-        "timer": 1,
-        "reason": "Rich will bribe others to commit mutiny if Priest dies"
-    },
-    {
-        "trigger": "PrettyWoman",
-        "event_type": "upcoming_death",
-        "required_alive": ["Rower2"],
-        "must_die": ["Rower2"],
-        "timer": 2,
-        "reason": "PrettyWoman dies → Rower2 suicide bomb"
-    }
+  {
+	"trigger": "doctor",
+	"event_type": "upcoming_slowdown",
+	"required_alive": ["jack"],
+	"must_die": ["jack"],
+	"timer": 2,
+	"title": "Jack's Infection",
+	"description": "Jack's septic eye worsens because the Doctor is gone.",
+	"success_reason": "Jack recovered despite the Doctor's absence; boat maintains speed.",
+	"failure_reason": "Nobody cured Jack's septic eye → boat slows if Jack survives"
+  },
+  {
+	"trigger": "doctor",
+	"event_type": "upcoming_death",
+	"required_alive": ["rich"],
+	"must_die": ["rich"],
+	"timer": 1,
+	"title": "Rich's Scheme",
+	"description": "Rich is plotting to bribe others to mutiny if the Doctor dies.",
+	"success_reason": "Rich's plan fails; crew remains loyal.",
+	"failure_reason": "Rich bribed others and a mutiny occurs!"
+  },
+  {
+	"trigger": "mom",
+	"event_type": "saveable_slowdown",
+	"required_alive": [],
+	"must_die": [],
+	"timer": 0,
+	"title": "Loss of Maternal Support",
+	"description": "Mom has died, affecting the crew’s morale.",
+	"success_reason": "Crew manages to maintain composure despite Mom's absence.",
+	"failure_reason": "Mom dies → boat slows due to low morale"
+  },
+  {
+	"trigger": "child",
+	"event_type": "upcoming_death",
+	"required_alive": ["mom", "priest"],
+	"must_die": ["mom", "priest"],
+	"timer": 1,
+	"title": "Child in Danger",
+	"description": "The Child dies while Mom or Priest are alive.",
+	"success_reason": "The crew mourns but prevents chaos.",
+	"failure_reason": "Child dies → Mom/Priest go on rampage"
+  },
+  {
+	"trigger": "rower1",
+	"event_type": "saveable_slowdown",
+	"required_alive": [],
+	"must_die": [],
+	"timer": 0,
+	"title": "Rower1 Lost",
+	"description": "Rower1 dies, affecting the boat's rowing efficiency.",
+	"success_reason": "Rower2 picks up the slack; boat continues steadily.",
+	"failure_reason": "Rower1 dies → boat slows"
+  },
+  {
+	"trigger": "rower1",
+	"event_type": "upcoming_death",
+	"required_alive": ["rower2"],
+	"must_die": ["rower2"],
+	"timer": 2,
+	"title": "Sibling Rivalry",
+	"description": "Rower1's death angers Rower2.",
+	"success_reason": "Rower2 calms down; no major incident occurs.",
+	"failure_reason": "Rower1 dies → Rower2 is furious"
+  },
+  {
+	"trigger": "rower1",
+	"event_type": "upcoming_death",
+	"required_alive": ["rich"],
+	"must_die": ["rich"],
+	"timer": 1,
+	"title": "Rich's Manipulation",
+	"description": "Rich sees an opportunity to bribe others if Rower1 dies.",
+	"success_reason": "Rich's plan fails; crew loyalty holds.",
+	"failure_reason": "Rich bribed others to mutiny after Rower1 dies"
+  },
+  {
+	"trigger": "rower2",
+	"event_type": "saveable_slowdown",
+	"required_alive": [],
+	"must_die": [],
+	"timer": 0,
+	"title": "Rower2 Lost",
+	"description": "Rower2 dies, affecting the boat's rowing efficiency.",
+	"success_reason": "Rower1 compensates; boat maintains pace.",
+	"failure_reason": "Rower2 dies → boat slows"
+  },
+  {
+	"trigger": "rower2",
+	"event_type": "upcoming_death",
+	"required_alive": ["rich"],
+	"must_die": ["rich"],
+	"timer": 1,
+	"title": "Rich's Second Chance",
+	"description": "Rich plots mutiny if Rower2 dies.",
+	"success_reason": "Rich's scheme is thwarted by crew vigilance.",
+	"failure_reason": "Rich bribed others to mutiny after Rower2 dies"
+  },
+  {
+	"trigger": "dog",
+	"event_type": "saveable_death",
+	"required_alive": ["doctor", "jack"],
+	"must_die": ["doctor", "jack"],
+	"timer": 2,
+	"title": "Dog's Illness",
+	"description": "The dog dies, potentially spreading poison.",
+	"success_reason": "Contamination avoided; crew unaffected.",
+	"failure_reason": "Dog dies → poison spreads if no Doctor/Jack alive"
+  },
+  {
+	"trigger": "cook",
+	"event_type": "saveable_slowdown",
+	"required_alive": ["poet"],
+	"must_die": ["poet"],
+	"timer": 0,
+	"title": "Cook Missing",
+	"description": "Cook dies; the Poet may need to fill in.",
+	"success_reason": "Poet successfully cooks; morale remains high.",
+	"failure_reason": "Poet cannot cook; morale and skill drop"
+  },
+  {
+	"trigger": "firstmate",
+	"event_type": "saveable_slowdown",
+	"required_alive": [],
+	"must_die": [],
+	"timer": 0,
+	"title": "First Mate Lost",
+	"description": "First Mate dies; boat steering efficiency drops.",
+	"success_reason": "Crew improvises; boat continues slowly.",
+	"failure_reason": "FirstMate dies → boat slows, cannot steer properly"
+  },
+  {
+	"trigger": "firstmate",
+	"event_type": "upcoming_death",
+	"required_alive": ["rich"],
+	"must_die": ["rich"],
+	"timer": 1,
+	"title": "Rich Strikes Again",
+	"description": "Rich attempts to bribe crew if FirstMate dies.",
+	"success_reason": "Crew resists bribery.",
+	"failure_reason": "Rich bribed others to mutiny after FirstMate dies"
+  },
+  {
+	"trigger": "priest",
+	"event_type": "upcoming_death",
+	"required_alive": ["firstmate"],
+	"must_die": ["firstmate"],
+	"timer": 2,
+	"title": "Faith Shaken",
+	"description": "Priest dies while FirstMate is alive; mutiny risk rises.",
+	"success_reason": "Crew maintains discipline despite Priest's death.",
+	"failure_reason": "Mutiny occurs if Priest dies and FirstMate alive"
+  },
+  {
+	"trigger": "priest",
+	"event_type": "upcoming_death",
+	"required_alive": ["rich"],
+	"must_die": ["rich"],
+	"timer": 1,
+	"title": "Rich's Influence",
+	"description": "Rich may incite mutiny if Priest dies.",
+	"success_reason": "Crew resists Rich's bribery.",
+	"failure_reason": "Rich bribed others to mutiny after Priest dies"
+  },
+  {
+	"trigger": "prettywoman",
+	"event_type": "upcoming_death",
+	"required_alive": ["rower2"],
+	"must_die": ["rower2"],
+	"timer": 2,
+	"title": "Pretty Woman's Tragedy",
+	"description": "Pretty Woman dies while Rower2 is alive.",
+	"success_reason": "Rower2 handles grief; no major incident.",
+	"failure_reason": "PrettyWoman dies → Rower2 suicide bomb"
+  }
 ]

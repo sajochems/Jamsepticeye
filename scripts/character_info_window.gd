@@ -5,29 +5,37 @@ extends Control
 @onready var age_label := $Panel/AgeLabel
 @onready var description_label := $Panel/DescriptionLabel
 @onready var kill_button := $Panel/KillButton
-@onready var game_over_label := $Panel/GameOverLabel
+@onready var close_button := $Panel/CloseButton
 
 var current_character = null
 var kill_callback: Callable = Callable()
+
+func _ready():
+	if kill_button:
+		kill_button.pressed.connect(_on_KillButton_pressed)
+	if close_button:
+		close_button.pressed.connect(_on_CloseButton_pressed)
 
 func show_character(character_ref, kill_cb: Callable):
 	current_character = character_ref
 	kill_callback = kill_cb
 	
-	name_label.text = character_ref.character_name
-	occupation_label.text = character_ref.occupation
-	age_label.text = str(character_ref.age)
-	description_label.text = character_ref.description
-	game_over_label.visible = false
+	if name_label:
+		name_label.text = character_ref.character_name
+	if occupation_label:
+		occupation_label.text = character_ref.occupation
+	if age_label:
+		age_label.text = str(character_ref.age)
+	if description_label:
+		description_label.text = character_ref.description
 	
 	show()
+	grab_focus()
 
 func _on_KillButton_pressed():
 	if current_character and current_character.alive and kill_callback.is_valid():
 		kill_callback.call(current_character)
 		hide()
-
-func show_game_over(reason: String):
-	game_over_label.text = reason
-	game_over_label.visible = true
-	show()
+		
+func _on_CloseButton_pressed():
+	hide()

@@ -1,36 +1,46 @@
 [
-    {
-        "trigger": 3,
-        "event_type": "upcoming_slowdown",
-        "required_alive": ["Rower1", "Rower2"],
-        "must_die": [],
-        "timer": 1,
-        "amount": 2,
-        "reason": "Storm hits the boat, slows it if rowers are alive"
-    },
-    {
-        "trigger": 4,
-        "event_type": "upcoming_death",
-        "required_alive": ["Cook"],
-        "must_die": ["Rich"],
-        "timer": 2,
-        "reason": "Food spoils, causing Rich to die if Cook was present"
-    },
-    {
-        "trigger": 5,
-        "event_type": "saveable_death",
-        "required_alive": ["FirstMate"],
-        "must_die": ["Poet", "Dog"],
-        "timer": 1,
-        "reason": "Pirates attack! If Poet and Dog survive, game ends"
-    },
-    {
-        "trigger": 2,
-        "event_type": "saveable_slowdown",
-        "required_alive": ["Rower1", "Rower2"],
-        "must_die": [],
-        "timer": 0,
-        "amount": 1,
-        "reason": "Calm seas give a temporary speed boost"
-    }
+  {
+	"trigger_round": 3,
+	"event_type": "upcoming_slowdown",
+	"required_alive": ["rower1", "rower2"],
+	"must_die": [],
+	"timer": 1,
+	"title": "Storm Approaches",
+	"description": "A storm hits the boat, affecting its speed if the rowers are alive.",
+	"success_reason": "The rowers skillfully navigate through the storm; the boat keeps moving steadily.",
+	"failure_reason": "Storm hits → boat slows if rowers are alive"
+  },
+  {
+	"trigger_round": 4,
+	"event_type": "upcoming_death",
+	"required_alive": ["cook"],
+	"must_die": ["rich"],
+	"timer": 2,
+	"title": "Spoiled Provisions",
+	"description": "Food spoils on board, potentially affecting Rich if the Cook was present.",
+	"success_reason": "Cook manages to salvage the food; Rich remains safe.",
+	"failure_reason": "Food spoils → Rich dies if Cook was present"
+  },
+  {
+	"trigger_round": 5,
+	"event_type": "saveable_death",
+	"required_alive": ["firstmate"],
+	"must_die": ["poet", "dog"],
+	"timer": 1,
+	"title": "Pirate Attack",
+	"description": "Pirates attack the ship! Survival depends on the Poet and Dog.",
+	"success_reason": "The Poet and Dog fend off the attack; everyone survives.",
+	"failure_reason": "Pirates attack! If Poet and Dog survive, game ends"
+  },
+  {
+	"trigger_round": 2,
+	"event_type": "saveable_slowdown",
+	"required_alive": ["rower1", "rower2"],
+	"must_die": [],
+	"timer": 0,
+	"title": "Calm Seas",
+	"description": "The sea is unusually calm, giving the boat a temporary speed advantage.",
+	"success_reason": "Crew enjoys smooth sailing; boat gets a speed boost.",
+	"failure_reason": "No slowdown occurs; the calm seas benefit the boat"
+  }
 ]
