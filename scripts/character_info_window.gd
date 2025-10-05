@@ -31,6 +31,8 @@ func show_character(character_ref, kill_cb: Callable, state):
 	if description_label:
 		description_label.text = character_ref.description
 	
+	if state > 2:
+		state = 2
 	dialogue.text = character_ref.dialogues[state]
 	
 	

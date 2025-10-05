@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwsvu5h8gcxh6"]
+[gd_scene load_steps=4 format=3 uid="uid://cm7ana525u3is"]
 
-[ext_resource type="Script" uid="uid://dtpxblvr8mug7" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
 font_size = 24

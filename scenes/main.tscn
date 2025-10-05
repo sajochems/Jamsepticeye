@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bf6iwnwiinecl"]
+[gd_scene load_steps=8 format=3 uid="uid://bf6iwnwiinecl"]
 
 [ext_resource type="Script" uid="uid://p8bqhkah8l3t" path="res://scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dt3sc13gk1nww" path="res://scenes/character_info_window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://dqu0qt4dlama8" path="res://assets/sprites/Copy of Railings.JPEG.jpg" id="2_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bsekspsffcygf" path="res://scenes/game_over_window.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://xld7kxpusy1y" path="res://scenes/event_info_window.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cm7ana525u3is" path="res://scenes/game_won_window.tscn" id="6_tefeu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
 font_size = 24
@@ -40,9 +41,6 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameWonWindow" parent="UI" instance=ExtResource("5_tbgi4")]
-visible = false
-
 [node name="RoundLabel" type="Label" parent="UI"]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -64,3 +62,5 @@ visible = false
 
 [node name="EventInfoWindow" parent="UI" instance=ExtResource("5_tefeu")]
 visible = false
+
+[node name="GameWonWindow" parent="UI" instance=ExtResource("6_tefeu")]
