@@ -15,6 +15,8 @@ var events = Events.new()
 @onready var info_window := $UI/CharacterInfoWindow
 @onready var game_over_window := $UI/GameOverWindow
 @onready var game_won_window := $UI/GameWonWindow
+@onready var event_info_window := $UI/EventInfoWindow
+
 
 @onready var round_label := $UI/RoundLabel
 @onready var log_panel := $UI/LogPanel
@@ -140,19 +142,23 @@ func _on_character_killed(character_ref):
 	for ev in instant_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
 			trigger_game_over("You REALLY shouldn't have done that", ev.get("description", ""))
+			return
 		
 	for ev in saveable_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
 			if events.evaluate_saveable_event(ev, alive_tags):
 				trigger_game_over("Oh no, if it isn't the consequences of your actions...", ev.get("lost_text", ""))
+				return
 			else:
-				add_log(ev.get("saved_text", ""))		
+				#add_log(ev.get("saved_text", ""))
+				event_info_window.show_event_info(ev.get("saved_text", ""))
 	
 	for ev in state_change_events:
 		if events.evaluate_state_changes(ev, alive_tags, state, round):
 			win_round = win_round + (events.rounds - round)
 			state = events.state
-			add_log(ev.get("description", ""))
+			#add_log(ev.get("description", ""))
+			event_info_window.show_event_info(ev.get("description", ""))
 		
 		
 		#if ev.get("trigger_round", -1) == round:
@@ -162,6 +168,7 @@ func _on_character_killed(character_ref):
 	#tick_events()
 	if state > 3:
 		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!")
+		return
 	if round >= win_round:
 		print("Round is "  + str(round))
 		var alive_characters = []
@@ -257,9 +264,10 @@ func restart_game():
 	# Reset game state
 	round = 0
 	update_round_label()
+	game_over = false
+	state = 0
+	win_round = 7
 	
-	#active_events.clear()
-	#reload events is important !!! 
 	alive_tags.clear()
 	
 	# Reset all characters
@@ -268,8 +276,13 @@ func restart_game():
 		char_ref.alive = true
 		char_ref.show()
 		
-	# Repopulate alive_tags
-	for tag in characters.keys():
+		# Disconnect old signals (if they exist)
+		if char_ref.is_connected("clicked", Callable(self, "_on_character_clicked")):
+			char_ref.disconnect("clicked", Callable(self, "_on_character_clicked"))
+		
+		# Reconnect signal
+		char_ref.connect("clicked", Callable(self, "_on_character_clicked"))
+		
 		alive_tags.append(tag)
 	
 	# Clear log

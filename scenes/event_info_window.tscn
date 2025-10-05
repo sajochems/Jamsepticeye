@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://xld7kxpusy1y"]
+
+[ext_resource type="Script" uid="uid://bt68eekbmvbhv" path="res://scripts/event_info_window.gd" id="1_52jcs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52jcs"]
+bg_color = Color(0.592157, 0.341176, 0.168627, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w1ndx"]
+font_size = 48
+
+[node name="EventInfoWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_52jcs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -250.0
+offset_right = 350.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_52jcs")
+
+[node name="Event" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.5
+offset_top = 40.0
+offset_right = 207.5
+offset_bottom = 107.0
+grow_horizontal = 2
+text = "An Event occured!"
+label_settings = SubResource("LabelSettings_w1ndx")
+
+[node name="CloseButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -39.5
+offset_top = -100.0
+offset_right = 39.5
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continue"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -80.0
+offset_right = 250.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EventList" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2

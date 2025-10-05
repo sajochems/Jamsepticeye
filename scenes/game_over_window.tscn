@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dp72am537ko7a" path="res://scripts/game_over_window.gd" id="1_jcb1m"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
-font_size = 24
-
 [sub_resource type="LabelSettings" id="LabelSettings_en71h"]
 font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_32xbo"]
 font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
+font_size = 24
 
 [node name="GameOverWindow" type="Control"]
 layout_mode = 3
@@ -22,6 +22,33 @@ script = ExtResource("1_jcb1m")
 layout_mode = 0
 offset_right = 1150.0
 offset_bottom = 650.0
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 50.0
+offset_right = 130.0
+offset_bottom = 117.0
+grow_horizontal = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_en71h")
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -33.5
+offset_top = 200.0
+offset_right = 33.5
+offset_bottom = 245.0
+grow_horizontal = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_32xbo")
 
 [node name="ReasonLabel" type="Label" parent="Panel"]
 layout_mode = 1
@@ -56,30 +83,3 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Restart"
-
-[node name="GameOver" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -130.0
-offset_top = 50.0
-offset_right = 130.0
-offset_bottom = 117.0
-grow_horizontal = 2
-text = "Game Over"
-label_settings = SubResource("LabelSettings_en71h")
-horizontal_alignment = 1
-
-[node name="Title" type="Label" parent="Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -33.5
-offset_top = 200.0
-offset_right = 33.5
-offset_bottom = 245.0
-grow_horizontal = 2
-text = "Title"
-label_settings = SubResource("LabelSettings_32xbo")
