@@ -68,3 +68,6 @@ visible = false
 visible = false
 
 [node name="MainMenuWindow" parent="UI" instance=ExtResource("7_o6xl0")]
+
+[node name="HandContainer" type="Node2D" parent="UI"]
+

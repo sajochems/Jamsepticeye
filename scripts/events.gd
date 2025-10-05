@@ -80,7 +80,7 @@ func evaluate_instant_lose_event(ev: Dictionary, characters: Array, state: int, 
 	if trigger_round != -1 and trigger_round != round:
 		return false
 		
-	if not evaluate_condition(condition, characters):
+	if not condition == "" and not evaluate_condition(condition, characters):
 		return false
 	
 	# The event is triggered	
@@ -103,7 +103,7 @@ func evaluate_state_changes(ev: Dictionary, characters: Array, state: int, round
 		return false
 	if trigger_round != -1 and trigger_round != round:
 		return false
-	if not evaluate_condition(condition, characters):
+	if not condition == "" and not evaluate_condition(condition, characters):
 		return false
 	
 	states = states +  ev.get("state_change", "")	

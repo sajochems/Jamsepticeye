@@ -32,6 +32,7 @@ offset_bottom = 38.0
 text = "Name"
 
 [node name="OccupationLabel" type="Label" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 181.0
 offset_top = 44.0
@@ -40,6 +41,7 @@ offset_bottom = 67.0
 text = "Occupation"
 
 [node name="AgeLabel" type="Label" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 336.0
 offset_top = 18.0

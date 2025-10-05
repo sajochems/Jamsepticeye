@@ -14,15 +14,15 @@ var events = Events.new()
 @onready var game_over_window := $UI/GameOverWindow
 @onready var game_won_window := $UI/GameWonWindow
 @onready var event_info_window := $UI/EventInfoWindow
-
-
+@onready var hands_folder := "res://assets/hands/"
+@onready var hand_container := $UI/HandContainer
 @onready var round_label := $UI/RoundLabel
 @onready var log_panel := $UI/LogPanel
 
 var characters: Dictionary = {}  
 var alive_tags: Array = []
 var round: int = 0
-var win_round: int = 7
+var win_round: int = 8
 var state: int = 0
 var state_change_events: Array = []
 var instant_lose_events: Array = []
@@ -110,6 +110,10 @@ func _on_character_killed(character_ref):
 	character_ref.hide()
 	alive_tags.erase(character_ref.character_tag)
 	
+	animate_character_death(character_ref)
+	await get_tree().create_timer(3.5).timeout  # <-- waits fixed time before continuing
+
+	
 	round += 1
 	update_round_label()
 	add_log("Round %d: %s was killed" % [round, character_ref.character_name])
@@ -179,6 +183,72 @@ func all_dead(tags: Array) -> bool:
 		if alive_tags.has(t):
 			return false
 	return true
+	
+func animate_character_death(character_ref):
+	character_ref.z_index = 100  # Ensure it's above other nodes
+	character_ref.show()
+
+	var screen_size = get_viewport_rect().size
+	var end_pos = Vector2(randf() * screen_size.x, -screen_size.y)  # thrown off-screen upward
+	var tween = create_tween()
+	var rotation_dir = 1 if randf() > 0.5 else -1
+	var target_rotation = 720 * rotation_dir
+	tween.tween_property(character_ref, "position", end_pos, 2.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(character_ref, "rotation_degrees", target_rotation, 2.5).set_trans(Tween.TRANS_LINEAR)
+	tween.tween_callback(Callable(character_ref, "hide"))
+	
+	# Show random hand image
+	show_random_hand_wave()
+
+
+	
+func show_random_hand_wave():
+	var dir = DirAccess.open(hands_folder)
+	if not dir:
+		return
+	
+	var all_files: PackedStringArray = dir.get_files()
+	var files := []  # normal Array to hold only real images
+	for f in all_files:
+		if not f.ends_with(".import"):
+			files.append(f)
+		if files.size() == 0:
+			return
+
+	
+	var random_file = files[randi() % files.size()]
+	var tex = load(hands_folder + random_file)
+	if not tex:
+		return
+	
+	# Create a temporary sprite
+	var sprite = Sprite2D.new()
+	sprite.centered = true
+	sprite.texture = tex
+	sprite.scale = Vector2(0.3, 0.3)  # 50% of original size
+	sprite.modulate.a = 0.0
+	sprite.position =  get_viewport_rect().size / 2
+	hand_container.add_child(sprite)
+	
+	# Optional text
+	var label = Label.new()
+	label.text = random_file.split(".")[0]
+	label.position = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/4)
+	label.add_theme_color_override("font_color", Color.WHITE)
+	hand_container.add_child(label)
+	
+	# Fade out and remove after animation
+	var tween = create_tween()
+	tween.tween_property(sprite, "modulate:a", 1.0, 1.5)
+	tween.tween_property(label, "modulate:a", 1.0, 1.5)
+	
+	tween.tween_interval(0.5)
+
+	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
+	tween.tween_property(label, "modulate:a", 0.0, 0.5)
+	tween.tween_callback(Callable(sprite, "queue_free"))
+	tween.tween_callback(Callable(label, "queue_free"))	
+	return tween
 	
 func restart_game():
 	# Hide windows
