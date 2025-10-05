@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bf6iwnwiinecl"]
+[gd_scene load_steps=18 format=3 uid="uid://bf6iwnwiinecl"]
 
 [ext_resource type="Script" uid="uid://p8bqhkah8l3t" path="res://scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dt3sc13gk1nww" path="res://scenes/character_info_window.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://djq7n2aykmiaf" path="res://assets/sprites/Water.png" id="2_85g3d"]
 [ext_resource type="Texture2D" uid="uid://j2btdqqkm6th" path="res://assets/Sky.jpg" id="2_choun"]
+[ext_resource type="AudioStream" uid="uid://bhta76hpetaa0" path="res://assets/pirate-adventure-361663.mp3" id="2_jbj1t"]
 [ext_resource type="Texture2D" uid="uid://by2poptbii05e" path="res://assets/sprites/Boat.png" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://uuprreqp45bb" path="res://assets/sprites/BottomBar.png" id="4_jkv2x"]
 [ext_resource type="Texture2D" uid="uid://b7toyk12a1ll5" path="res://assets/sprites/Kraken.png" id="4_ya4ey"]
@@ -22,6 +23,11 @@ font_color = Color(0.592157, 0.341176, 0.168627, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bo1nx")
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jbj1t")
+autoplay = true
+parameters/looping = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
