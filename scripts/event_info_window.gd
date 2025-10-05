@@ -30,12 +30,13 @@ func show_event_info(description: String):
 	divider.custom_minimum_size = Vector2(event_list.size.x - 20, 2)
 	divider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	event_list.add_child(divider)
-
-	show()
-
-
 	
-func _on_CloseButton_pressed():
+	show()
+	
+func clear_events():
 	for child in event_list.get_children():
 		child.queue_free()
+	
+func _on_CloseButton_pressed():
+	clear_events()
 	hide()

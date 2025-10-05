@@ -1,20 +1,20 @@
 [
   {
-	"name": "Doctor",
+	"name": "Christopher Turk",
 	"tag": "doctor",
 	"age": 42,
 	"occupation": "Ship's Doctor",
-	"description": "A skilled physician, married to Mom and father of Child. Will keep the crew healthy.",
+	"description": "A skilled physician, married to Sabrina and father of Kevin. Will keep the crew healthy.",
 	"dialogues": ["I'm not too worried to be honest with you, as a doctor I know my worth", "This captain better know what he's doing! At least I can see in his eyes he values a true doctor", "Don't look at me, did you not hear me. I'M A DOCTOR. Go kill one of these other people, I don't care!", "what? You want me to break down and cry now that I've lost someone of my family? Its kill or be killed!"],
 	"sprite": "res://assets/sprites/doctor.png",
 	"x": 0.125,
 	"y": 0.25
   },
   {
-	"name": "Mom",
+	"name": "Sabrina",
 	"tag": "mom",
 	"age": 39,
-	"occupation": "Homemaker",
+	"occupation": "Carpenter",
 	"description": "Married to the Doctor, mother of the Child. She also happens to be a very good carpenter",
 	"dialogues": ["Oh how I wish my child would stay safe in these terrifying times!", "Please, please, please! Just kill me, save my child!", "This captain better not even DARE think to kill my child!"],
 	"sprite": "res://assets/sprites/mom.png",
@@ -22,11 +22,11 @@
 	"y": 0.5
   },
   {
-	"name": "Child",
+	"name": "Kevin",
 	"tag": "child",
 	"age": 10,
-	"occupation": "Dependent",
-	"description": "Son of the Doctor and Mom. Innocent, but who would kill a child anyways.",
+	"occupation": "Primary school",
+	"description": "Often times left home alone. Son of the Doctor and Sabrina. Innocent, but who would kill a child anyways.",
 	"dialogues": ["Mommy, I'm scared!", "*cries*", "I WANT TO GO HOME"],
 	"sprite": "res://assets/sprites/child.png",
 	"x": 0.125,
@@ -55,11 +55,11 @@
 	"y": 0.5
   },
   {
-	"name": "Rich",
+	"name": "Once ler",
 	"tag": "rich",
 	"age": 50,
 	"occupation": "Wealthy Merchant",
-	"description": "A cunning rich passenger with millions and millions of gold.",
+	"description": "A cunning rich passenger with millions and millions of gold. Obtained from a lucrative forestry business, not the most ethical work, but how bad could he possibly be.",
 	"dialogues": ["What a trip from hell! The captain better know my worth!", "This captain is making some odd choices. I better ensure that I stay on by promising him a million gold.", "HELLOO! I AM RICH! IF YOU KEEP ME ALIVE I'LL MAKE YOU RICH."],
 	"sprite": "res://assets/sprites/rich.png",
 	"x": 0.375,
@@ -126,7 +126,7 @@
 	"tag": "dog",
 	"age": 6,
 	"occupation": "Good boy",
-	"description": "TA good boy",
+	"description": "He is a really good boy and loves his owner the chef",
 	"dialogues": ["woof", "woof woof", "*growl*"],
 	"sprite": "res://assets/sprites/dog.png",
 	"x": 0.5,

@@ -28,6 +28,7 @@ var state_change_events: Array = []
 var instant_lose_events: Array = []
 var saveable_lose_events: Array = []
 var game_over: bool = false
+var input_locked: bool = false
 
 func _ready():
 	events.load_events()
@@ -99,26 +100,29 @@ func spawn_character(char_data: Dictionary):
 	alive_tags.append(character.character_tag)
 	
 func _on_character_clicked(character_ref):
-	if not game_over:
+	if not (game_over or input_locked):
 		info_window.show_character(character_ref, Callable(self, "_on_character_killed"), state)
 		
 func _on_character_killed(character_ref):
-	if game_over or not character_ref.alive:
+	if game_over or not character_ref.alive or input_locked:
 		return
 		
+	#lock input while animation plays
+	input_locked = true
+	
 	character_ref.alive = false
 	character_ref.hide()
 	alive_tags.erase(character_ref.character_tag)
 	
-	animate_character_death(character_ref)
-	await get_tree().create_timer(3.5).timeout  # <-- waits fixed time before continuing
-
+	var tween = animate_character_death(character_ref)
+	await tween.finished
+	
+	input_locked = false
 	
 	round += 1
 	update_round_label()
 	add_log("Round %d: %s was killed" % [round, character_ref.character_name])
 	
-
 	for ev in instant_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
 			trigger_game_over("You REALLY shouldn't have done that", ev.get("description", ""))
@@ -134,7 +138,7 @@ func _on_character_killed(character_ref):
 				event_info_window.show_event_info(ev.get("description", ""))
 				event_info_window.show_event_info(ev.get("saved_text", ""))
 				ev["triggered"] = true
-
+	
 	
 	for ev in state_change_events:
 		if events.evaluate_state_changes(ev, alive_tags, state, round):
@@ -156,8 +160,9 @@ func _on_character_killed(character_ref):
 			var char = characters[tag]
 			if char.alive:
 				alive_characters.append(char.character_name)
-
+	
 		trigger_game_won(alive_characters)
+		
 func trigger_game_over(title: String, reason: String):
 	game_over = true
 	game_over_window.show_game_over(title, reason)
@@ -200,6 +205,8 @@ func animate_character_death(character_ref):
 	# Show random hand image
 	show_random_hand_wave()
 	
+	return tween
+	
 func show_random_hand_wave():
 	var dir = DirAccess.open(hands_folder)
 	if not dir:
@@ -240,7 +247,7 @@ func show_random_hand_wave():
 	tween.tween_property(label, "modulate:a", 1.0, 1.5)
 	
 	tween.tween_interval(0.5)
-
+	
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
 	tween.tween_property(label, "modulate:a", 0.0, 0.5)
 	tween.tween_callback(Callable(sprite, "queue_free"))
@@ -251,7 +258,7 @@ func restart_game():
 	# Hide windows
 	game_over_window.hide()
 	info_window.hide()
-
+	
 	# Reset game state
 	round = 0
 	update_round_label()
@@ -259,34 +266,33 @@ func restart_game():
 	state = 0
 	win_round = 7
 	alive_tags.clear()
-
+	event_info_window.clear_events()
+	
+	
 	# Reset all characters
-	for tag in characters.keys():
-		var char_ref = characters[tag]
-		char_ref.alive = true
-		char_ref.show()
-
-		# Disconnect old signals (if they exist)
-		if char_ref.is_connected("clicked", Callable(self, "_on_character_clicked")):
-			char_ref.disconnect("clicked", Callable(self, "_on_character_clicked"))
-
-		# Reconnect signal
-		char_ref.connect("clicked", Callable(self, "_on_character_clicked"))
-		alive_tags.append(tag)
-
+	# Remove old characters
+	for char in $CharacterRows.get_children():
+		char.queue_free()
+	
+	characters.clear()
+	alive_tags.clear()
+	
+	# Spawn again
+	load_characters()
+	
 	# Reset all event "triggered" flags
 	for ev in instant_lose_events:
 		if ev.has("triggered"):
 			ev["triggered"] = false
-
+	
 	for ev in saveable_lose_events:
 		if ev.has("triggered"):
 			ev["triggered"] = false
-
+	
 	for ev in state_change_events:
 		if ev.has("triggered"):
 			ev["triggered"] = false
-
+	
 	# Clear log
 	log_panel.clear()
 	add_log("Game restarted.")
