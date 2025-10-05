@@ -17,7 +17,7 @@
   },
   {
 	"triggered": false,
-	"condition": "stowaway or dog or jack and not fast and not furious and not doctor and not priest",
+	"condition": "towaway and rich or dog and rich or jack and rich and not fast and not furious and not doctor and not priest",
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,

@@ -10,7 +10,7 @@ const DEFAULT_SPRITE := "res://assets/sprites/default.png"
 @export var saveable_death_events: Array = []
 @export var instant_death_events: Array = []
 @export var rounds: int
-@export var state: int
+@export var states: int
 
 func load_events():
 	var f1 := FileAccess.open(INSTANT_LOSE_EVENTS_JSON, FileAccess.READ)
@@ -51,6 +51,7 @@ func evaluate_condition(condition_str: String, characters: Array) -> bool:
 	var expr = Expression.new()
 	var err = expr.parse(condition_str, unique_vars)
 	if err != OK:
+		print(condition_str)
 		push_error("Failed to parse condition: %s" % condition_str)
 		return false
 
@@ -92,7 +93,7 @@ func evaluate_saveable_event(ev: Dictionary, characters:Array):
 
 func evaluate_state_changes(ev: Dictionary, characters: Array, state: int, round: int):
 	rounds = round
-	state = state
+	states = state
 	var condition = ev.get("condition", "")
 	var triggered = ev.get("triggered", "")
 	var trigger_round = int(ev.get("trigger_round", -1))
@@ -105,6 +106,6 @@ func evaluate_state_changes(ev: Dictionary, characters: Array, state: int, round
 	if not evaluate_condition(condition, characters):
 		return false
 	
-	state += ev.get("state_change", "")	
-	round += ev.get("round_change", "")
+	states = states +  ev.get("state_change", "")	
+	rounds = rounds +  ev.get("round_change", "")
 	return true	
