@@ -187,7 +187,7 @@ func all_dead(tags: Array) -> bool:
 func animate_character_death(character_ref):
 	character_ref.z_index = 100  # Ensure it's above other nodes
 	character_ref.show()
-
+	
 	var screen_size = get_viewport_rect().size
 	var end_pos = Vector2(randf() * screen_size.x, -screen_size.y)  # thrown off-screen upward
 	var tween = create_tween()
@@ -199,8 +199,6 @@ func animate_character_death(character_ref):
 	
 	# Show random hand image
 	show_random_hand_wave()
-
-
 	
 func show_random_hand_wave():
 	var dir = DirAccess.open(hands_folder)
@@ -214,7 +212,6 @@ func show_random_hand_wave():
 			files.append(f)
 		if files.size() == 0:
 			return
-
 	
 	var random_file = files[randi() % files.size()]
 	var tex = load(hands_folder + random_file)

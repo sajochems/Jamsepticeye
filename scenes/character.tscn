@@ -27,6 +27,7 @@ scale = Vector2(0.1, 0.13)
 texture = ExtResource("3_lrhn5")
 
 [node name="Name" type="Label" parent="."]
+visible = false
 offset_left = -41.0
 offset_top = -85.0
 offset_right = 41.0

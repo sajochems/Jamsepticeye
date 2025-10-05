@@ -42,8 +42,9 @@ offset_top = 40.0
 offset_right = 207.5
 offset_bottom = 107.0
 grow_horizontal = 2
-text = "An Event occured!"
+text = "Captain's log"
 label_settings = SubResource("LabelSettings_w1ndx")
+horizontal_alignment = 1
 
 [node name="CloseButton" type="Button" parent="Panel"]
 layout_mode = 1
