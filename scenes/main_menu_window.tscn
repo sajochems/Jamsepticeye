@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://4owixrdxkxv1"]
+
+[ext_resource type="Script" uid="uid://hrxct3ojc44e" path="res://scripts/main_menu_window.gd" id="1_cy23x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cy23x"]
+bg_color = Color(0, 0.27781, 0.46596, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_onu3a"]
+font_size = 48
+
+[node name="MainMenuWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cy23x")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 650.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cy23x")
+
+[node name="MainMenu" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -169.0
+offset_top = 40.0
+offset_right = 169.0
+offset_bottom = 107.0
+grow_horizontal = 2
+text = "Kraken escape"
+label_settings = SubResource("LabelSettings_onu3a")
+
+[node name="Start" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 386.0
+offset_right = 465.0
+offset_bottom = 436.0
+text = "Start"
+
+[node name="Quit" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 733.0
+offset_top = 387.0
+offset_right = 833.0
+offset_bottom = 437.0
+text = "Quit"
