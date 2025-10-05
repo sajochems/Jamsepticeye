@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm7ana525u3is"]
+[gd_scene load_steps=5 format=3 uid="uid://cm7ana525u3is"]
 
-[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="Script" uid="uid://dtpxblvr8mug7" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="FontFile" uid="uid://bbrg44b2ldxyc" path="res://assets/treasure-map-deadhand-font/TreasureMapDeadhand-yLA3.ttf" id="2_f5ydh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
 font_size = 24
@@ -27,12 +28,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -158.0
-offset_right = 400.0
-offset_bottom = 42.0
+offset_left = -613.0
+offset_top = -162.0
+offset_right = 188.925
+offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.545, 1.545)
+theme_override_fonts/font = ExtResource("2_f5ydh")
+theme_override_font_sizes/font_size = 134
 text = "Congratulations! You have survived and made it to shore with the following characters on your ship:"
 label_settings = SubResource("LabelSettings_jcb1m")
 horizontal_alignment = 1
@@ -79,6 +83,8 @@ offset_top = 50.0
 offset_right = 130.0
 offset_bottom = 117.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_f5ydh")
+theme_override_font_sizes/font_size = 110
 text = "Land! Land ahead!"
 label_settings = SubResource("LabelSettings_en71h")
 horizontal_alignment = 1
@@ -88,10 +94,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.035
-offset_left = 551.0
-offset_top = 532.0
-offset_right = 702.75
-offset_bottom = 532.25
+offset_left = 593.0
+offset_top = 582.0
+offset_right = 744.75
+offset_bottom = 582.25
+scale = Vector2(1.73, 1.73)
+theme_override_fonts/font = ExtResource("2_f5ydh")
 text = "Wanna try again?"
 
 [node name="Label2" type="Label" parent="Panel"]
@@ -99,10 +107,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.035
-offset_left = 925.0
-offset_top = 505.0
-offset_right = 1081.75
-offset_bottom = 553.25
+offset_left = 986.0
+offset_top = 553.0
+offset_right = 1142.75
+offset_bottom = 601.25
+theme_override_fonts/font = ExtResource("2_f5ydh")
 text = "Had your fill of the 
 stormy seas for one day? "
 
