@@ -25,7 +25,7 @@
   },
   {
 	"triggered": false,
-	"condition": "child and not mother",
+	"condition": "child and not mom",
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,

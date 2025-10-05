@@ -32,18 +32,20 @@ func load_events():
 			state_change_events = parsed
 			
 func evaluate_condition(condition_str: String, characters: Array) -> bool:
-
-	# Create the expression
-	var tokens = condition_str.split(" ")
+	# Trim spaces and split into tokens
+	var tokens = condition_str.strip_edges().split(" ")
 	var unique_vars = []
+	var boolean_operators = ["and", "or", "not"]
+
+	# Collect only variable names (exclude boolean operators)
 	for t in tokens:
-		if t != "" and not unique_vars.has(t):
+		if t != "" and not boolean_operators.has(t) and not unique_vars.has(t):
 			unique_vars.append(t)
 
-	# Build parallel lists for expression parameters
+	# Map variable names to their values (true if character exists)
 	var values = []
 	for var_name in unique_vars:
-		values.append(characters.has(var_name))  # true if alive, false otherwise
+		values.append(characters.has(var_name))
 
 	# Parse the expression
 	var expr = Expression.new()
@@ -55,12 +57,14 @@ func evaluate_condition(condition_str: String, characters: Array) -> bool:
 	# Execute the expression
 	var result = expr.execute(values)
 	if expr.has_execute_failed():
-		push_error("Failed to execute expression: %s" % condition_str)
+		push_error("Failed to execute condition: %s" % condition_str)
 		return false
 
 	return result
 	
 func evaluate_instant_lose_event(ev: Dictionary, characters: Array, state: int, round: int):
+	rounds = round
+	state = state
 	var triggered = ev.get("triggered", "")
 	var trigger_state = ev.get("trigger_state", -1)
 	var trigger_round = int(ev.get("trigger_round", -1))
@@ -87,6 +91,8 @@ func evaluate_saveable_event(ev: Dictionary, characters:Array):
 
 
 func evaluate_state_changes(ev: Dictionary, characters: Array, state: int, round: int):
+	rounds = round
+	state = state
 	var condition = ev.get("condition", "")
 	var triggered = ev.get("triggered", "")
 	var trigger_round = int(ev.get("trigger_round", -1))

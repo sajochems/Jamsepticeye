@@ -150,7 +150,7 @@ func _on_character_killed(character_ref):
 	
 	for ev in state_change_events:
 		if events.evaluate_state_changes(ev, alive_tags, state, round):
-			win_round += events.rounds - round
+			win_round = win_round + (events.rounds - round)
 			state = events.state
 			add_log(ev.get("description", ""))
 		
@@ -163,6 +163,7 @@ func _on_character_killed(character_ref):
 	if state > 3:
 		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!")
 	if round >= win_round:
+		print("Round is "  + str(round))
 		var alive_characters = []
 		for tag in characters.keys():
 			var char = characters[tag]
