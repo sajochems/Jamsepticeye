@@ -5,10 +5,10 @@
 	"trigger_round": 2,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Boat breaks, big leak",
+	"description": "The Kraken has done some terrible damage to your boat! Someone should fix this!",
 	"lose_condition": "not mom",
-	"saved_text": "",
-	"lost_text": ""
+	"saved_text": "Luckily, Sabrina's been working late, fixing your boat because she's that me Espresso",
+	"lost_text": "You're not really the sharpest tool in the shed, killing your carpenter on a breaking boat."
   },
   {
 	"triggered": false,
@@ -16,10 +16,10 @@
 	"trigger_round": 4,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Septic Eye outbreak",
+	"description": "Who would've thought, Jack got Septic Eye!",
 	"lose_condition": "not doctor",
-	"saved_text": "",
-	"lost_text": ""
+	"saved_text": "Your doctor springs into action and stops the infection, thank god!",
+	"lost_text": "Without a doctor, who's gonna treat Jack? That's right. NOBODY. Now everyone's got septic eye. ew."
   },
   {
 	"triggered": false,
@@ -27,10 +27,10 @@
 	"trigger_round": 10,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Brothers fight",
+	"description": "Oof. Fast and Furious are fighting over the pretty woman. This won't end well...",
 	"lose_condition": "no poet",
-	"saved_text": "",
-	"lost_text": ""
+	"saved_text": "Wait what? Fast is eyeing up that poet over there. Well, I guess he moved on quickly.",
+	"lost_text": "When 2 dogs fight for a bone... The kraken is the one that ends up winning"
   },
   {
 	"triggered": false,
@@ -38,10 +38,10 @@
 	"trigger_round": -1,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Cook poisons everyone",
+	"description": "You killed the cook's dog. And if there's one person you shouldn't mess with its they guy making your food",
 	"lose_condition": "not doctor",
-	"saved_text": "",
-	"lost_text": ""
+	"saved_text": "Lucklily our handy dandy doctor knows the exact right antidote to cure the poison, crisis averted!",
+	"lost_text": "Thats some metal revenge, poisoning everyone. If only there was a doctor to save you..."
   },
   {
 	"triggered": false,
@@ -49,10 +49,10 @@
 	"trigger_round": 6,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Something with science or food",
+	"description": "Oh my, there seems to be some poison spray or acid coming out of the Kraken's tentacles!",
 	"lose_condition": "not jack or not cook",
-	"saved_text": "",
-	"lost_text": ""
+	"saved_text": "Luckily someone on your crew knows enough about chemistry and acid reactions that they know just what to do",
+	"lost_text": "If only there were ANYONE on board that knows something about chemistry or gastronomy or something, that would've been a great help"
   }
 
 ]

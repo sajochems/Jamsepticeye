@@ -5,6 +5,7 @@
 	"age": 42,
 	"occupation": "Ship's Doctor",
 	"description": "A skilled physician, married to Mom and father of Child. Essential for keeping the crew healthy.",
+	"dialogues": ["I'm not too worried to be honest with you, as a doctor I know my worth", "This captain better know what he's doing! At least I can see in his eyes he values a true doctor", "Don't look at me, did you not hear me. I'M A DOCTOR. Go kill one of these other people, I don't care!", "what? You want me to break down and cry now that I've lost someone of my family? Its kill or be killed!"],
 	"sprite": "res://assets/sprites/doctor.png",
 	"x": 0.125,
 	"y": 0.25
@@ -15,6 +16,7 @@
 	"age": 39,
 	"occupation": "Homemaker",
 	"description": "Married to the Doctor, mother of the Child. Her presence keeps morale high among the crew.",
+	"dialogues": ["Oh how I wish my child would stay safe in these terrifying times!", "Please, please, please! Just kill me, save my child!", "This captain better not even DARE think to kill my child!"],
 	"sprite": "res://assets/sprites/mom.png",
 	"x": 0.125,
 	"y": 0.5
@@ -25,6 +27,7 @@
 	"age": 10,
 	"occupation": "Dependent",
 	"description": "Son of the Doctor and Mom. Innocent, but his fate deeply affects morale.",
+	"dialogues": ["Mommy, I'm scared!", "*cries*", "I WANT TO GO HOME"],
 	"sprite": "res://assets/sprites/child.png",
 	"x": 0.125,
 	"y": 0.75
@@ -35,6 +38,7 @@
 	"age": 25,
 	"occupation": "Oarsman",
 	"description": "One of two rowing brothers. Strong and loyal, but deeply tied to Rower2 and in love with PrettyWoman.",
+	"dialogues": ["*stares at the pretty woman* Huh what? Sorry I'm a bit distracted", "I think she likes me back", "This captain is making some odd choices. He better not kill my lady!", "Don't talk to me, the sooner this hell is over the better."],
 	"sprite": "res://assets/sprites/rower1.png",
 	"x": 0.375,
 	"y": 0.25
@@ -45,6 +49,7 @@
 	"age": 23,
 	"occupation": "Oarsman",
 	"description": "Younger of the two brothers. Shares a bond with Rower1, and also in love with PrettyWoman.",
+	"dialogues": ["Have you met my brother? Some say we're two peas in a pod", "Ugh, Its hard to keep ahead of this darned Kraken! Luckily I have some pleasent company", "This is going horribly, as a first mate, maybe its my job to do something about it", "Losing a brother is like losing an arm..."],
 	"sprite": "res://assets/sprites/rower2.png",
 	"x": 0.375,
 	"y": 0.5
@@ -55,6 +60,7 @@
 	"age": 50,
 	"occupation": "Wealthy Merchant",
 	"description": "A cunning rich passenger who often schemes to bribe others to mutiny.",
+	"dialogues": ["What a trip from hell! The captain better know my worth!", "This captain is making some odd choices. I better ensure that I stay on by promising him a million gold.", "HELLOO! I AM RICH! IF YOU KEEP ME ALIVE I'LL MAKE YOU RICH."],
 	"sprite": "res://assets/sprites/rich.png",
 	"x": 0.375,
 	"y": 0.75
@@ -65,6 +71,7 @@
 	"age": 22,
 	"occupation": "Passenger",
 	"description": "Young and beautiful. Both Rower brothers are in love with her, which makes her fate volatile.",
+	"dialogues": ["Oh, how I so hope to make it home safe", "Thank god that strong rower is here to keep us safe.", "I would be so scared, but with the first mate looking out for me, be warned."],
 	"sprite": "res://assets/sprites/prettywoman.png",
 	"x": 0.625,
 	"y": 0.25
@@ -74,7 +81,8 @@
 	"tag": "cook",
 	"age": 45,
 	"occupation": "Ship's Cook",
-	"description": "Keeps the crew fed and spirits lifted. Without him, morale and strength falter.",
+	"description": "Keeps the crew fed and spirits lifted. Brought his dog.",
+	"dialogues": ["Who's a good boy? Don't worry doggo, it will all be okay", "Oh what terror! Don't look at my dog like that, he hasn't done anything wrong!", "If anyone happens to my dog I will kill everyone on this boat and then myself."],
 	"sprite": "res://assets/sprites/cook.png",
 	"x": 0.625,
 	"y": 0.5
@@ -84,27 +92,19 @@
 	"tag": "poet",
 	"age": 28,
 	"occupation": "Writer",
-	"description": "A dreamer and storyteller who boosts morale. Will step into the cook’s role if needed.",
+	"description": "A dreamer and storyteller, likes buff men.",
+	"dialogues": ["Fair is Foul and Foul is Fair!", "Kraken, Kraken where art thou!", "You egg! This captain is Hamlet himself! Poisoned by ambitions!"],
 	"sprite": "res://assets/sprites/poet.png",
 	"x": 0.625,
 	"y": 0.75
   },
   {
-	"name": "First Mate",
-	"tag": "firstmate",
-	"age": 38,
-	"occupation": "First Mate",
-	"description": "Second-in-command of the ship. His death threatens discipline and order.",
-	"sprite": "res://assets/sprites/firstmate.png",
-	"x": 0.875,
-	"y": 0.25
-  },
-  {
 	"name": "Priest",
 	"tag": "priest",
 	"age": 55,
-	"occupation": "Clergyman",
-	"description": "Spiritual guide of the crew. His presence prevents mutiny, but his death can destabilize faith.",
+	"occupation": "Priest",
+	"description": "Spiritual guide of the crew.",
+	"dialogues": ["Let us pray for the quick disappears of this devilish monster", "God, please stand by us!", "What has possessed this captain to make these terrible choices! He may be tempted by the devil himself!"],
 	"sprite": "res://assets/sprites/priest.png",
 	"x": 0.875,
 	"y": 0.5
@@ -113,8 +113,9 @@
 	"name": "Jack",
 	"tag": "jack",
 	"age": 30,
-	"occupation": "Sailor",
-	"description": "A rough sailor with a septic eye. His survival depends on the Doctor’s care.",
+	"occupation": "Scientist",
+	"description": "A man of science.",
+	"dialogues": ["Hey, I'm Jack, top of the morning to ya", "I'm a man of science, I'm doing important research, please leave me alone", "It's clear this captain is not a scholar because there is ZERO logic in this decisions"],
 	"sprite": "res://assets/sprites/jack.png",
 	"x": 0.875,
 	"y": 0.75
@@ -124,8 +125,9 @@
 	"name": "Dog",
 	"tag": "dog",
 	"age": 6,
-	"occupation": "Mascot",
+	"occupation": "Good boy",
 	"description": "The loyal ship’s dog. Beloved by the crew but vulnerable, his death can trigger disease or despair.",
+	"dialogues": ["woof", "woof woof", "WOOOF WOOOF"],
 	"sprite": "res://assets/sprites/dog.png",
 	"x": 0.5,
 	"y": 0.25
@@ -133,9 +135,10 @@
   {
 	"name": "Stowaway",
 	"tag": "stowaway",
-	"age": 16,
-	"occupation": "Runaway",
-	"description": "A hidden passenger who boarded illegally. Often overlooked but can shift outcomes.",
+	"age": 24,
+	"occupation": "",
+	"description": "A hidden passenger who boarded illegally.",
+	"dialogues": ["...", "If I don't move maybe he won't see me", "CRATE. I am a crate. Look away please! I just want to make it to shore, I didn't have any money for a ticket. "],
 	"sprite": "res://assets/sprites/stowaway.png",
 	"x": 0.5,
 	"y": 0.75

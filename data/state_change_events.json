@@ -1,19 +1,11 @@
 [
   {
 	"triggered": false,
-	"condition": "",
-	"trigger_round": -1,
-	"state_change": 0,
-	"round_change": 0,
-	"description": "",
-  },
-  {
-	"triggered": false,
 	"condition": "priest and not child",
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
-	"description": "Priest loses faith bc you killed a child"
+	"description": "Unsuprisingsly, the priest loses some faith in you because you killed a child. "
   },
   {
 	"triggered": false,
@@ -21,7 +13,7 @@
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
-	"description": "Rich guy loses faith"
+	"description": "Really? Of all people you could choose, you choose them? How can your richest travellers now believe you make competent choices."
   },
   {
 	"triggered": false,
@@ -29,7 +21,7 @@
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
-	"description": "People cant believe you killed a childs mother"
+	"description": "People can't believe you killed a child's mother, you really can't do anything right can you?"
   },
   {
 	"triggered": false,
@@ -37,7 +29,7 @@
 	"trigger_round": -1,
 	"state_change": 0,
 	"round_change": 2,
-	"description": "You lost Furious"
+	"description": "Pff with your strongest rower down you're really not going as fast as you did before"
   },
   {
 	"triggered": false,
@@ -45,7 +37,7 @@
 	"trigger_round": -1,
 	"state_change": 0,
 	"round_change": 1,
-	"description": "You lost Fast"
+	"description": "Okay he may not be your fasters rower, but losing a rower will still put a serious damp in your speed"
   },
   {
 	"triggered": false,
@@ -53,23 +45,15 @@
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
-	"description": "NOO Not my brother"
+	"description": "How dare you kill my brother! Yikes, there's nothing more unsettling that being on a tiny boat with a really buff really angry dude. Except the Kraken following you maybe."
   },
   {
 	"triggered": false,
-	"condition": "furious and not prettywoman",
+	"condition": "furious and not prettywoman or fast and not prettywoman" ,
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": -1,
-	"description": "You killed my crush"
-  },
-  {
-	"triggered": false,
-	"condition": "fast and not prettywoman",
-	"trigger_round": -1,
-	"state_change": 1,
-	"round_change": -1,
-	"description": "You killed my crush"
+	"description": "Did you not see that Rower eyeing up the Pretty Woman over there? He's very unhappy with you. Oddly, it does seem like the boat's going a bit faster without the distraction"
   },
   {
 	"triggered": false,
@@ -77,7 +61,7 @@
 	"trigger_round": 8,
 	"state_change": -1,
 	"round_change": 0,
-	"description": "Its so cute"
+	"description": "There's something so heartwarming about having a little cutie on board. The travellers are calming down a bit"
   },
   {
 	"triggered": false,
@@ -85,6 +69,6 @@
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
-	"description": "Excuse you I want to live"
+	"description": "These travellers are really unhappy that of all people, you killed the doctor?!"
   }
 ]

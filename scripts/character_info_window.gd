@@ -6,6 +6,8 @@ extends Control
 @onready var description_label := $Panel/DescriptionLabel
 @onready var kill_button := $Panel/KillButton
 @onready var close_button := $Panel/CloseButton
+@onready var dialogue := $Panel/Dialogue
+
 
 var current_character = null
 var kill_callback: Callable = Callable()
@@ -16,7 +18,7 @@ func _ready():
 	if close_button:
 		close_button.pressed.connect(_on_CloseButton_pressed)
 
-func show_character(character_ref, kill_cb: Callable):
+func show_character(character_ref, kill_cb: Callable, state):
 	current_character = character_ref
 	kill_callback = kill_cb
 	
@@ -28,6 +30,9 @@ func show_character(character_ref, kill_cb: Callable):
 		age_label.text = str(character_ref.age)
 	if description_label:
 		description_label.text = character_ref.description
+	
+	dialogue.text = character_ref.dialogues[state]
+	
 	
 	show()
 	grab_focus()
