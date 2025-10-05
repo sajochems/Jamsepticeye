@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_he2x2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lrhn5"]
-font_color = Color(1, 1, 0, 1)
+font_color = Color(0, 0, 0, 1)
 
 [node name="Character" type="Area2D"]
 script = ExtResource("1_agfs1")

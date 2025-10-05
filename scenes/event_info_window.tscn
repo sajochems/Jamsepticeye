@@ -75,4 +75,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="EventList" type="VBoxContainer" parent="Panel/ScrollContainer"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
+alignment = 1

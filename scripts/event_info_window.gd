@@ -8,11 +8,34 @@ func _ready():
 		close_button.pressed.connect(_on_CloseButton_pressed)
 	
 func show_event_info(description: String):
+	
+	# --- Create and configure the label ---
 	var label = Label.new()
 	label.text = description
-	label.autowrap = true
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	label.add_theme_font_size_override("font_size", 18)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	label.clip_text = false
+	label.custom_minimum_size = Vector2(event_list.size.x, 0) 
+
+	# --- Add the label to the event list ---
 	event_list.add_child(label)
+
+	# --- Divider line between events ---
+	var divider = ColorRect.new()
+	divider.color = Color(1, 1, 1, 0.2)  # slightly transparent white
+	divider.custom_minimum_size = Vector2(event_list.size.x - 20, 2)
+	divider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	event_list.add_child(divider)
+
 	show()
+
+
 	
 func _on_CloseButton_pressed():
+	for child in event_list.get_children():
+		child.queue_free()
 	hide()
