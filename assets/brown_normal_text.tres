@@ -1,4 +1,9 @@
-[gd_resource type="LabelSettings" format=3 uid="uid://veo07l5p14xt"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://veo07l5p14xt"]
+
+[ext_resource type="FontFile" uid="uid://bbrg44b2ldxyc" path="res://assets/treasure-map-deadhand-font/TreasureMapDeadhand-yLA3.ttf" id="1_0dbig"]
 
 [resource]
+paragraph_spacing = 1.0
+font = ExtResource("1_0dbig")
+font_size = 24
 font_color = Color(0.592157, 0.341176, 0.168627, 1)

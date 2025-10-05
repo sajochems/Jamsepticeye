@@ -43,7 +43,7 @@
   {
 	"triggered": false,
 	"condition": "fast and not prettywoman",
-	"trigger_round": 4,
+	"trigger_round": 12,
 	"trigger_state": -1,
 	"round_change": 0,
 	"description": "Really? Killing the woman your strongest rower has a crush on? Guess who's getting crushed now, idiot!"
