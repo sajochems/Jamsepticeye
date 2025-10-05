@@ -11,7 +11,7 @@ var alive: bool = true
 signal clicked(character_ref)
 
 @onready var sprite: Sprite2D = $Sprite2D
-
+																																																																																																																								   
 func _ready():
 	connect("input_event", Callable(self, "_on_input_event"))
 	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
