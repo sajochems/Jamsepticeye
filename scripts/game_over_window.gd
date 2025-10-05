@@ -10,6 +10,10 @@ func _ready():
 	restart_button.pressed.connect(Callable(self, "_on_RestartButton_pressed"))
 
 func show_game_over(title: String, reason: String):
+	
+	print("Title label:", title_label)
+	print("Reason label:", reason_label)
+
 	title_label.text = title
 	reason_label.text = reason
 	show()

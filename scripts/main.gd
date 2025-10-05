@@ -8,12 +8,15 @@ const DEFAULT_SPRITE := "res://assets/sprites/default.png"
 @onready var CharacterScene := preload("res://scenes/character.tscn")
 @onready var info_window := $UI/CharacterInfoWindow
 @onready var game_over_window := $UI/GameOverWindow
+@onready var game_won_window := $UI/GameWonWindow
+
 @onready var round_label := $UI/RoundLabel
 @onready var log_panel := $UI/LogPanel
 
 var characters: Dictionary = {}  
 var alive_tags: Array = []
 var round: int = 0
+var win_round: int = 7
 var active_events: Array = []   
 var death_events: Array = []
 var timed_events: Array = []
@@ -25,6 +28,7 @@ func _ready():
 	update_round_label()
 	
 	# Connect GameOverWindow restart signal
+	print("GameOverWindow script path:", game_over_window.get_script().resource_path)
 	game_over_window.connect("restart_pressed", Callable(self, "restart_game"))
 	
 func load_events():
@@ -123,6 +127,15 @@ func _on_character_killed(character_ref):
 	# After each death, evaluate active timed events
 	tick_events()
 	
+	if round >= win_round:
+		var alive_characters = []
+		for tag in characters.keys():
+			var char = characters[tag]
+			if char.alive:
+				alive_characters.append(char.character_name)
+
+		trigger_game_won(alive_characters)
+	
 func queue_event(event: Dictionary):
 	var new_event = event.duplicate(true)
 	new_event["remaining"] = event.get("timer", 0) + 1
@@ -177,6 +190,10 @@ func evaluate_event(ev: Dictionary):
 func trigger_game_over(title: String, reason: String):
 	game_over = true
 	game_over_window.show_game_over(title, reason)
+	
+func trigger_game_won(characters: PackedStringArray):
+	game_over = true
+	game_won_window.show_game_won(characters)
 	
 func update_round_label():
 	round_label.text = "Round: %d" % round
