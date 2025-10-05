@@ -152,6 +152,5 @@ z_index = 1
 visible = false
 
 [node name="MainMenuWindow" parent="UI" instance=ExtResource("7_o6xl0")]
-visible = false
 
 [node name="HandContainer" type="Node2D" parent="UI"]
