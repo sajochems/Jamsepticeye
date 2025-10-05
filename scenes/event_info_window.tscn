@@ -1,10 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://xld7kxpusy1y"]
+[gd_scene load_steps=6 format=3 uid="uid://xld7kxpusy1y"]
 
 [ext_resource type="Script" uid="uid://bt68eekbmvbhv" path="res://scripts/event_info_window.gd" id="1_52jcs"]
 [ext_resource type="StyleBox" uid="uid://chlwwfuceg0ds" path="res://assets/event_info_window.tres" id="2_w1ndx"]
 [ext_resource type="Texture2D" uid="uid://bavu6em0xil7c" path="res://assets/sprites/Sign.png" id="3_86x38"]
+[ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="4_b2f15"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_w1ndx"]
+font = ExtResource("4_b2f15")
 font_size = 48
 font_color = Color(0.592157, 0.341176, 0.168627, 1)
 
@@ -64,6 +66,7 @@ offset_right = 39.5
 offset_bottom = -69.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_b2f15")
 text = "Continue"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]

@@ -1,19 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsekspsffcygf"]
+[gd_scene load_steps=9 format=3 uid="uid://bsekspsffcygf"]
 
 [ext_resource type="Script" uid="uid://dp72am537ko7a" path="res://scripts/game_over_window.gd" id="1_jcb1m"]
 [ext_resource type="Texture2D" uid="uid://yya3idqh1o0i" path="res://assets/sprites/Prettywoman.png" id="2_lciw2"]
 [ext_resource type="Texture2D" uid="uid://b7toyk12a1ll5" path="res://assets/sprites/Kraken.png" id="3_ngrav"]
+[ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="4_ngrav"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17ttl"]
 bg_color = Color(0.107887, 0.227634, 0.464298, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_en71h"]
+font = ExtResource("4_ngrav")
 font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_32xbo"]
+font = ExtResource("4_ngrav")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
+font = ExtResource("4_ngrav")
 font_size = 24
 
 [node name="GameOverWindow" type="Control"]
@@ -115,4 +119,6 @@ offset_right = 100.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_ngrav")
+theme_override_font_sizes/font_size = 32
 text = "Restart"

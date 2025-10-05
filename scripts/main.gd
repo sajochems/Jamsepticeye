@@ -182,7 +182,7 @@ func trigger_game_won(characters: PackedStringArray):
 	game_won_window.show_game_won(characters)
 	
 func update_round_label():
-	round_label.text = "Round: %d" % round
+	round_label.text = "Round: %d" % (round + 1)
 	
 func add_log(msg: String):
 	var label = Label.new()
