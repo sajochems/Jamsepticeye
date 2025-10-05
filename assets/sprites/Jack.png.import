@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://20bathbp420j"
-path="res://.godot/imported/Priest.png-20bd9df78fe6aedfa7b336bb2c823554.ctex"
+uid="uid://ndo8ncb4uhvo"
+path="res://.godot/imported/Jack.png-48278d62d51ee72685b6435564aeca28.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Priest.png"
-dest_files=["res://.godot/imported/Priest.png-20bd9df78fe6aedfa7b336bb2c823554.ctex"]
+source_file="res://assets/sprites/Jack.png"
+dest_files=["res://.godot/imported/Jack.png-48278d62d51ee72685b6435564aeca28.ctex"]
 
 [params]
 

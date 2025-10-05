@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0xhrm8b2jipn"
-path="res://.godot/imported/Rower2.PNG-f91e9df978c4647a24344186a7facf67.ctex"
+uid="uid://dso4dh6xatam2"
+path="res://.godot/imported/Rower2.png-e154d6debf74f2f81bbb09691a6935c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Rower2.PNG"
-dest_files=["res://.godot/imported/Rower2.PNG-f91e9df978c4647a24344186a7facf67.ctex"]
+source_file="res://assets/sprites/Rower2.png"
+dest_files=["res://.godot/imported/Rower2.png-e154d6debf74f2f81bbb09691a6935c2.ctex"]
 
 [params]
 
