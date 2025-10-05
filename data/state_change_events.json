@@ -59,7 +59,7 @@
   {
 	"triggered": false,
 	"condition": "child or dog",
-	"trigger_round": 8,
+	"trigger_round": 5,
 	"state_change": -1,
 	"round_change": 0,
 	"description": "There's something so heartwarming about having a little cutie on board. The travellers are calming down a bit"

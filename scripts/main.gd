@@ -41,6 +41,7 @@ func _ready():
 	# Connect GameOverWindow restart signal
 	print("GameOverWindow script path:", game_over_window.get_script().resource_path)
 	game_over_window.connect("restart_pressed", Callable(self, "restart_game"))
+	game_won_window.connect("restart_pressed", Callable(self, "restart_game"))
 	
 	instant_lose_events = events.instant_death_events
 	state_change_events = events.state_change_events
@@ -112,19 +113,7 @@ func _on_character_killed(character_ref):
 	if game_over or not character_ref.alive or input_locked:
 		return
 		
-	if state > 3:
-		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!", "")
-		return
-		
-	if round >= win_round:
-		print("Round is "  + str(round))
-		var alive_characters = []
-		for tag in characters.keys():
-			var char = characters[tag]
-			if char.alive:
-				alive_characters.append(char.character_name)
 	
-		trigger_game_won(alive_characters)
 		
 	#lock input while animation plays
 	input_locked = true
@@ -141,6 +130,20 @@ func _on_character_killed(character_ref):
 	round += 1
 	update_round_label()
 	add_log("Round %d: %s was killed" % [round, character_ref.character_name])
+	
+	if state > 3:
+		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!", "")
+		return
+		
+	if round >= win_round:
+		print("Round is "  + str(round))
+		var alive_characters = []
+		for tag in characters.keys():
+			var char = characters[tag]
+			if char.alive:
+				alive_characters.append(char.character_name)
+	
+		trigger_game_won(alive_characters)
 	
 	for ev in instant_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
@@ -307,7 +310,6 @@ func show_random_hand_wave():
 	panel.add_child(label)
 	hand_container.add_child(panel)
 	#panel.z_index = 200  # make sure it renders above other UI
-
 	
 	# Fade out and remove after animation
 	var tween = create_tween()
@@ -326,6 +328,7 @@ func show_random_hand_wave():
 func restart_game():
 	# Hide windows
 	game_over_window.hide()
+	game_won_window.hide()
 	info_window.hide()
 	
 	# Reset game state
@@ -336,7 +339,6 @@ func restart_game():
 	win_round = 7
 	alive_tags.clear()
 	event_info_window.clear_events()
-	
 	
 	# Reset all characters
 	# Remove old characters
