@@ -17,7 +17,10 @@ var events = Events.new()
 @onready var hands_folder := "res://assets/hands/"
 @onready var hand_container := $UI/HandContainer
 @onready var round_label := $UI/RoundLabel
-@onready var log_panel := $UI/LogPanel
+@onready var log_panel := $UI/ScrollContainer/LogPanel
+
+@onready var brown_label_settings := preload("res://assets/brown_normal_text.tres")
+
 
 var characters: Dictionary = {}  
 var alive_tags: Array = []
@@ -42,6 +45,8 @@ func _ready():
 	instant_lose_events = events.instant_death_events
 	state_change_events = events.state_change_events
 	saveable_lose_events = events.saveable_death_events
+	
+	add_log("Captain's Log")
 
 			
 func load_characters():
@@ -175,8 +180,44 @@ func update_round_label():
 	round_label.text = "Round: %d" % round
 	
 func add_log(msg: String):
-	log_panel.append_text(msg + "\n")
+	var label = Label.new()
+	label.text = msg
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.size_flags_vertical = Control.SIZE_SHRINK_CENTER
+	label.add_theme_font_size_override("font_size", 18)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+	label.vertical_alignment = VERTICAL_ALIGNMENT_TOP
+	label.clip_text = false
+	label.custom_minimum_size = Vector2(log_panel.size.x, 0)
+
+	# Apply the same LabelSettings as EventInfoWindow
+	var label_settings := load("res://assets/brown_normal_text.tres")
+	if label_settings:
+		label.label_settings = label_settings
+	else:
+		push_warning("Could not load brown_normal_text.tres")
+
+	# Add label to log panel
+	log_panel.add_child(label)
+
+	# Divider line between entries
+	var divider = ColorRect.new()
+	divider.color = label_settings.font_color
+	divider.custom_minimum_size = Vector2(log_panel.size.x - 20, 2)
+	divider.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	log_panel.add_child(divider)
+
+	# Auto-scroll if the log is inside a ScrollContainer
+	if log_panel.get_parent() is ScrollContainer:
+		await get_tree().process_frame  # Wait for layout update
+		var scroll := log_panel.get_parent()
+		scroll.scroll_vertical = scroll.get_v_scroll_bar().max_value
 	
+func clear_log():
+	for child in log_panel.get_children():
+		child.queue_free()
+
 func intersects(list1: Array, list2: Array) -> bool:
 	for item in list1:
 		if list2.has(item):
@@ -234,12 +275,37 @@ func show_random_hand_wave():
 	sprite.position =  get_viewport_rect().size / 2
 	hand_container.add_child(sprite)
 	
-	# Optional text
+	# --- Create a panel to hold the label ---
+	var panel = Panel.new()
+	panel.position = get_viewport_rect().size / 2 - Vector2(125, 300)  # Centered offset
+	panel.custom_minimum_size = Vector2(250, 60)  # Define a fixed visible area
+
+	# --- Add a background style ---
+	var panel_style = StyleBoxFlat.new()
+	panel_style.bg_color = Color(0, 0, 0, 0.5)  # opaque black with 75% alpha
+	panel_style.corner_radius_top_left = 10
+	panel_style.corner_radius_top_right = 10
+	panel_style.corner_radius_bottom_left = 10
+	panel_style.corner_radius_bottom_right = 10
+	panel.add_theme_stylebox_override("panel", panel_style)
+
+	# --- Create and style the label ---
 	var label = Label.new()
 	label.text = random_file.split(".")[0]
-	label.position = get_viewport_rect().size / 2 - Vector2(0, 275)
-	label.add_theme_color_override("font_color", Color.BLACK)
-	hand_container.add_child(label)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.add_theme_color_override("font_color", Color.WHITE)
+	label.add_theme_font_size_override("font_size", 22)
+	label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	label.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	label.anchor_right = 1
+	label.anchor_bottom = 1
+
+	# --- Add and show ---
+	panel.add_child(label)
+	hand_container.add_child(panel)
+	#panel.z_index = 200  # make sure it renders above other UI
+
 	
 	# Fade out and remove after animation
 	var tween = create_tween()
@@ -252,6 +318,7 @@ func show_random_hand_wave():
 	tween.tween_property(label, "modulate:a", 0.0, 0.5)
 	tween.tween_callback(Callable(sprite, "queue_free"))
 	tween.tween_callback(Callable(label, "queue_free"))	
+	tween.tween_callback(Callable(panel, "queue_free"))
 	return tween
 	
 func restart_game():
@@ -294,5 +361,6 @@ func restart_game():
 			ev["triggered"] = false
 	
 	# Clear log
-	log_panel.clear()
+	clear_log()
+	add_log("Captain's Log")
 	add_log("Game restarted.")

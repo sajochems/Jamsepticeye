@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsekspsffcygf"]
+[gd_scene load_steps=8 format=3 uid="uid://bsekspsffcygf"]
 
 [ext_resource type="Script" uid="uid://dp72am537ko7a" path="res://scripts/game_over_window.gd" id="1_jcb1m"]
+[ext_resource type="Texture2D" uid="uid://yya3idqh1o0i" path="res://assets/sprites/Prettywoman.png" id="2_lciw2"]
+[ext_resource type="Texture2D" uid="uid://b7toyk12a1ll5" path="res://assets/sprites/Kraken.png" id="3_ngrav"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17ttl"]
+bg_color = Color(0.107887, 0.227634, 0.464298, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_en71h"]
 font_size = 48
@@ -20,8 +25,17 @@ script = ExtResource("1_jcb1m")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 650.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_17ttl")
+
+[node name="Person" type="Sprite2D" parent="Panel"]
+position = Vector2(127, 472.5)
+texture = ExtResource("2_lciw2")
+
+[node name="Kraken" type="Sprite2D" parent="Panel"]
+position = Vector2(559, 600.5)
+texture = ExtResource("3_ngrav")
 
 [node name="GameOver" type="Label" parent="Panel"]
 layout_mode = 1

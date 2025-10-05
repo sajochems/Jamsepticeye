@@ -1,15 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf6iwnwiinecl"]
+[gd_scene load_steps=17 format=3 uid="uid://bf6iwnwiinecl"]
 
 [ext_resource type="Script" uid="uid://p8bqhkah8l3t" path="res://scripts/main.gd" id="1_bo1nx"]
 [ext_resource type="PackedScene" uid="uid://dt3sc13gk1nww" path="res://scenes/character_info_window.tscn" id="1_jjgbg"]
-[ext_resource type="Texture2D" uid="uid://dqu0qt4dlama8" path="res://assets/sprites/Copy of Railings.JPEG.jpg" id="2_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://djq7n2aykmiaf" path="res://assets/sprites/Water.png" id="2_85g3d"]
+[ext_resource type="Texture2D" uid="uid://j2btdqqkm6th" path="res://assets/Sky.jpg" id="2_choun"]
+[ext_resource type="Texture2D" uid="uid://by2poptbii05e" path="res://assets/sprites/Boat.png" id="3_choun"]
+[ext_resource type="Texture2D" uid="uid://uuprreqp45bb" path="res://assets/sprites/BottomBar.png" id="4_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://b7toyk12a1ll5" path="res://assets/sprites/Kraken.png" id="4_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://dfrlovt68wigg" path="res://assets/sprites/Wheel stand.png" id="5_eb6dy"]
 [ext_resource type="PackedScene" uid="uid://bsekspsffcygf" path="res://scenes/game_over_window.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://xld7kxpusy1y" path="res://scenes/event_info_window.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://cm7ana525u3is" path="res://scenes/game_won_window.tscn" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://bymvkxx7hdhjf" path="res://assets/sprites/Wheel.png" id="6_trceg"]
 [ext_resource type="PackedScene" uid="uid://4owixrdxkxv1" path="res://scenes/main_menu_window.tscn" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://b5s8yemvv8suo" path="res://assets/sprites/Vertical_sign.PNG" id="9_trceg"]
+[ext_resource type="Texture2D" uid="uid://cagxnryquohnv" path="res://assets/sprites/long_sign.PNG" id="10_a8y0u"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
-font_size = 24
+font_size = 32
+font_color = Color(0.592157, 0.341176, 0.168627, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bo1nx")
@@ -18,11 +27,57 @@ script = ExtResource("1_bo1nx")
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
+[node name="Air" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(-413, -176)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_choun")
+
+[node name="Air2" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(93, -176)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_choun")
+
+[node name="Air3" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(601, -176)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_choun")
+
+[node name="Water" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(12, 59)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_85g3d")
+
+[node name="BottomBar" type="Sprite2D" parent="."]
+z_index = -8
+position = Vector2(10, 282)
+scale = Vector2(2, 0.2)
+texture = ExtResource("4_jkv2x")
+
 [node name="BoatBackground" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(0, 64)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jyhfs")
+z_index = -6
+position = Vector2(0, -48)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_choun")
+
+[node name="WheelStand" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(15, 149)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("5_eb6dy")
+
+[node name="Wheel" type="Sprite2D" parent="WheelStand"]
+position = Vector2(-21.6667, -78.3333)
+texture = ExtResource("6_trceg")
+
+[node name="Kraken" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(281, -173)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_ya4ey")
 
 [node name="CharacterRows" type="Node2D" parent="."]
 
@@ -30,6 +85,7 @@ texture = ExtResource("2_jyhfs")
 
 [node name="CharacterInfoWindow" parent="UI" instance=ExtResource("1_jjgbg")]
 visible = false
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -42,31 +98,60 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RoundLabel" type="Label" parent="UI"]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Round: 0"
-label_settings = SubResource("LabelSettings_jyhfs")
+[node name="RoundSign" type="Sprite2D" parent="UI"]
+z_index = -1
+position = Vector2(135, 641)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("9_trceg")
 
-[node name="LogPanel" type="RichTextLabel" parent="UI"]
+[node name="RoundLabel" type="Label" parent="UI"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -96.0
-offset_right = 406.0
-offset_bottom = 2.0
+offset_left = 36.0
+offset_top = -93.0
+offset_right = 240.0
+offset_bottom = -26.0
 grow_vertical = 0
-text = "LogPanel"
+text = "Round: 0"
+label_settings = SubResource("LabelSettings_jyhfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -547.0
+offset_top = -136.0
+offset_right = -147.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="LogPanel" type="VBoxContainer" parent="UI/ScrollContainer"]
+custom_minimum_size = Vector2(400, 80)
+layout_mode = 2
+
+[node name="LogSign" type="Sprite2D" parent="UI"]
+z_index = -1
+position = Vector2(944, 732)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("10_a8y0u")
 
 [node name="GameOverWindow" parent="UI" instance=ExtResource("5_tbgi4")]
 visible = false
 
 [node name="EventInfoWindow" parent="UI" instance=ExtResource("5_tefeu")]
 visible = false
+z_index = 1
 
 [node name="GameWonWindow" parent="UI" instance=ExtResource("6_tefeu")]
 visible = false
 
 [node name="MainMenuWindow" parent="UI" instance=ExtResource("7_o6xl0")]
+visible = false
 
 [node name="HandContainer" type="Node2D" parent="UI"]

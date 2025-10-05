@@ -6,9 +6,9 @@
 	"occupation": "Ship's Doctor",
 	"description": "A skilled physician, married to Sabrina and father of Kevin. Will keep the crew healthy.",
 	"dialogues": ["I'm not too worried to be honest with you, as a doctor I know my worth", "This captain better know what he's doing! At least I can see in his eyes he values a true doctor", "Don't look at me, did you not hear me. I'M A DOCTOR. Go kill one of these other people, I don't care!", "what? You want me to break down and cry now that I've lost someone of my family? Its kill or be killed!"],
-	"sprite": "res://assets/sprites/doctor.png",
-	"x": 0.125,
-	"y": 0.25
+	"sprite": "res://assets/sprites/Doctor.png",
+	"x": 0.45,
+	"y": 0.3
   },
   {
 	"name": "Sabrina",
@@ -17,8 +17,8 @@
 	"occupation": "Carpenter",
 	"description": "Married to the Doctor, mother of the Child. She also happens to be a very good carpenter",
 	"dialogues": ["Oh how I wish my child would stay safe in these terrifying times!", "Please, please, please! Just kill me, save my child!", "This captain better not even DARE think to kill my child!"],
-	"sprite": "res://assets/sprites/mom.png",
-	"x": 0.125,
+	"sprite": "res://assets/sprites/Carpenter.png",
+	"x": 0.825,
 	"y": 0.5
   },
   {
@@ -28,9 +28,9 @@
 	"occupation": "Primary school",
 	"description": "Often times left home alone. Son of the Doctor and Sabrina. Innocent, but who would kill a child anyways.",
 	"dialogues": ["Mommy, I'm scared!", "*cries*", "I WANT TO GO HOME"],
-	"sprite": "res://assets/sprites/child.png",
-	"x": 0.125,
-	"y": 0.75
+	"sprite": "res://assets/sprites/Child.png",
+	"x": 0.775,
+	"y": 0.625
   },
   {
 	"name": "Fast",
@@ -39,9 +39,9 @@
 	"occupation": "Oarsman",
 	"description": "One of two rowing brothers. Strong and loyal, keeps eyeing the Pretty Woman.",
 	"dialogues": ["*stares at the pretty woman* Huh what? Sorry I'm a bit distracted", "I think she likes me back", "This captain is making some odd choices. He better not kill my lady!", "Don't talk to me, the sooner this hell is over the better."],
-	"sprite": "res://assets/sprites/rower1.png",
-	"x": 0.375,
-	"y": 0.25
+	"sprite": "res://assets/sprites/Rower1.png",
+	"x": 0.1,
+	"y": 0.575
   },
   {
 	"name": "Furious",
@@ -50,9 +50,9 @@
 	"occupation": "Oarsman",
 	"description": "Younger of the two brothers and First Mate of the ship",
 	"dialogues": ["Have you met my brother? Some say we're two peas in a pod", "Ugh, Its hard to keep ahead of this darned Kraken! Luckily I have some pleasent company", "This is going horribly, as a first mate, maybe its my job to do something about it", "Losing a brother is like losing an arm..."],
-	"sprite": "res://assets/sprites/rower2.png",
-	"x": 0.375,
-	"y": 0.5
+	"sprite": "res://assets/sprites/Rower2.png",
+	"x": 0.925,
+	"y": 0.575
   },
   {
 	"name": "Once ler",
@@ -61,9 +61,9 @@
 	"occupation": "Wealthy Merchant",
 	"description": "A cunning rich passenger with millions and millions of gold. Obtained from a lucrative forestry business, not the most ethical work, but how bad could he possibly be.",
 	"dialogues": ["What a trip from hell! The captain better know my worth!", "This captain is making some odd choices. I better ensure that I stay on by promising him a million gold.", "HELLOO! I AM RICH! IF YOU KEEP ME ALIVE I'LL MAKE YOU RICH."],
-	"sprite": "res://assets/sprites/rich.png",
-	"x": 0.375,
-	"y": 0.75
+	"sprite": "res://assets/sprites/Rich.png",
+	"x": 0.35,
+	"y": 0.56
   },
   {
 	"name": "Pretty Woman",
@@ -72,9 +72,9 @@
 	"occupation": "Passenger",
 	"description": "Young and beautiful.",
 	"dialogues": ["Oh, how I so hope to make it home safe", "Thank god that strong rower is here to keep us safe.", "I would be so scared, but with the first mate looking out for me, be warned."],
-	"sprite": "res://assets/sprites/prettywoman.png",
-	"x": 0.625,
-	"y": 0.25
+	"sprite": "res://assets/sprites/Prettywoman.png",
+	"x": 0.6,
+	"y": 0.275
   },
   {
 	"name": "Cook",
@@ -83,9 +83,9 @@
 	"occupation": "Ship's Cook",
 	"description": "Keeps the crew fed and spirits lifted. Brought his dog.",
 	"dialogues": ["Who's a good boy? Don't worry doggo, it will all be okay", "Oh what terror! Don't look at my dog like that, he hasn't done anything wrong!", "If anything happens to my dog I will kill everyone on this boat and then myself."],
-	"sprite": "res://assets/sprites/cook.png",
-	"x": 0.625,
-	"y": 0.5
+	"sprite": "res://assets/sprites/Chef.png",
+	"x": 0.675,
+	"y": 0.325
   },
   {
 	"name": "Poet",
@@ -94,9 +94,9 @@
 	"occupation": "Writer",
 	"description": "A dreamer and storyteller, likes buff men.",
 	"dialogues": ["Fair is Foul and Foul is Fair!", "Kraken, Kraken where art thou!", "You egg! This captain is Hamlet himself! Poisoned by ambitions!"],
-	"sprite": "res://assets/sprites/poet.png",
-	"x": 0.625,
-	"y": 0.75
+	"sprite": "res://assets/sprites/Poet.png",
+	"x": 0.3,
+	"y": 0.28
   },
   {
 	"name": "Priest",
@@ -105,9 +105,9 @@
 	"occupation": "Priest",
 	"description": "Spiritual guide of the crew.",
 	"dialogues": ["Let us pray for the quick disappearance of this devilish monster", "God, please stand by us!", "What has possessed this captain to make these terrible choices! He may be tempted by the devil himself!"],
-	"sprite": "res://assets/sprites/priest.png",
-	"x": 0.875,
-	"y": 0.5
+	"sprite": "res://assets/sprites/Priest.png",
+	"x": 0.2,
+	"y": 0.4
   },
   {
 	"name": "Jack",
@@ -116,9 +116,9 @@
 	"occupation": "Scientist",
 	"description": "A man of science. ",
 	"dialogues": ["Hey, I'm Jack, top of the morning to ya", "I'm a man of science, I'm doing important research, please leave me alone", "It's clear this captain is not a scholar because there is ZERO logic in this decisions"],
-	"sprite": "res://assets/sprites/jack.png",
-	"x": 0.875,
-	"y": 0.75
+	"sprite": "res://assets/sprites/Scientist.png",
+	"x": 0.6,
+	"y": 0.55
   },
 
   {
@@ -128,9 +128,9 @@
 	"occupation": "Good boy",
 	"description": "He is a really good boy and loves his owner the chef",
 	"dialogues": ["woof", "woof woof", "*growl*"],
-	"sprite": "res://assets/sprites/dog.png",
-	"x": 0.5,
-	"y": 0.25
+	"sprite": "res://assets/sprites/Dog.png",
+	"x": 0.725,
+	"y": 0.45
   },
   {
 	"name": "Stowaway",
@@ -140,7 +140,7 @@
 	"description": "A hidden passenger who boarded illegally.",
 	"dialogues": ["...", "If I don't move maybe he won't see me", "CRATE. I am a crate. Look away please! I just want to make it to shore, I didn't have any money for a ticket. "],
 	"sprite": "res://assets/sprites/stowaway.png",
-	"x": 0.5,
-	"y": 0.75
+	"x": 0.52,
+	"y": 0.3
   }
 ]

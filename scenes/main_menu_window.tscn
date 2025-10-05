@@ -19,8 +19,8 @@ script = ExtResource("1_cy23x")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 650.0
+offset_right = 1280.0
+offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cy23x")
 
 [node name="MainMenu" type="Label" parent="Panel"]

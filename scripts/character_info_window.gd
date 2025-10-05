@@ -6,7 +6,7 @@ extends Control
 @onready var description_label := $Panel/DescriptionLabel
 @onready var kill_button := $Panel/KillButton
 @onready var close_button := $Panel/CloseButton
-@onready var dialogue := $Panel/Dialogue
+@onready var dialogue := $Panel/Panel/Dialogue
 
 
 var current_character = null

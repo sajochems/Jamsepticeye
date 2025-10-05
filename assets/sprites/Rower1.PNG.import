@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlthenrny305i"
-path="res://.godot/imported/Child.JPEG.jpg-80d0500b55d2a86a0f9d95e19ba97cdb.ctex"
+uid="uid://vfp56q1eu0cr"
+path="res://.godot/imported/Rower1.PNG-b37cc6e643bf4dcfd183c0e6a3dee47d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Child.JPEG.jpg"
-dest_files=["res://.godot/imported/Child.JPEG.jpg-80d0500b55d2a86a0f9d95e19ba97cdb.ctex"]
+source_file="res://assets/sprites/Rower1.PNG"
+dest_files=["res://.godot/imported/Rower1.PNG-b37cc6e643bf4dcfd183c0e6a3dee47d.ctex"]
 
 [params]
 

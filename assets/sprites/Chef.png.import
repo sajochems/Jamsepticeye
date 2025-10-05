@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dufcggbph6ma"
-path="res://.godot/imported/Dog.JPEG.jpg-d9822f9c4ef8041d35389049b8f0a7d4.ctex"
+uid="uid://8fxcm0d21rqb"
+path="res://.godot/imported/Chef.png-c7c7738b8998e52aa5a0accb086cf946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Dog.JPEG.jpg"
-dest_files=["res://.godot/imported/Dog.JPEG.jpg-d9822f9c4ef8041d35389049b8f0a7d4.ctex"]
+source_file="res://assets/sprites/Chef.png"
+dest_files=["res://.godot/imported/Chef.png-c7c7738b8998e52aa5a0accb086cf946.ctex"]
 
 [params]
 

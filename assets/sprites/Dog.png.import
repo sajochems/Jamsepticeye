@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqu0qt4dlama8"
-path="res://.godot/imported/Copy of Railings.JPEG.jpg-80177b9063a2637d329dda413daf8121.ctex"
+uid="uid://dtq4hjl1wor6t"
+path="res://.godot/imported/Dog.png-523a1d29089496da3ac1ff27e34be30f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Copy of Railings.JPEG.jpg"
-dest_files=["res://.godot/imported/Copy of Railings.JPEG.jpg-80177b9063a2637d329dda413daf8121.ctex"]
+source_file="res://assets/sprites/Dog.png"
+dest_files=["res://.godot/imported/Dog.png-523a1d29089496da3ac1ff27e34be30f.ctex"]
 
 [params]
 

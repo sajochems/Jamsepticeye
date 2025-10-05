@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt3sc13gk1nww"]
+[gd_scene load_steps=5 format=3 uid="uid://dt3sc13gk1nww"]
 
 [ext_resource type="Script" uid="uid://d32qsw84hum8" path="res://scripts/character_info_window.gd" id="1_8r5yb"]
+[ext_resource type="StyleBox" uid="uid://chlwwfuceg0ds" path="res://assets/event_info_window.tres" id="2_3n0n8"]
+[ext_resource type="Texture2D" uid="uid://bavu6em0xil7c" path="res://assets/sprites/Sign.png" id="3_g0b2t"]
+[ext_resource type="LabelSettings" uid="uid://veo07l5p14xt" path="res://assets/brown_normal_text.tres" id="4_2hrhu"]
 
 [node name="CharacterInfoWindow" type="Control"]
 layout_mode = 3
@@ -17,50 +20,85 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -320.0
-offset_top = -160.0
+offset_top = -200.0
 offset_right = 320.0
-offset_bottom = 160.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_3n0n8")
+
+[node name="Board" type="Sprite2D" parent="Panel"]
+position = Vector2(266, 110)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_g0b2t")
 
 [node name="NameLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 15.0
-offset_right = 226.0
-offset_bottom = 38.0
+offset_left = 142.0
+offset_top = 29.0
+offset_right = 189.0
+offset_bottom = 52.0
+text = "Shrek"
+label_settings = ExtResource("4_2hrhu")
+
+[node name="NameTag" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 76.0
+offset_bottom = 52.0
 text = "Name"
+label_settings = ExtResource("4_2hrhu")
 
 [node name="OccupationLabel" type="Label" parent="Panel"]
-visible = false
 layout_mode = 0
-offset_left = 181.0
-offset_top = 44.0
-offset_right = 270.0
-offset_bottom = 67.0
+offset_left = 142.0
+offset_top = 58.0
+offset_right = 231.0
+offset_bottom = 81.0
 text = "Occupation"
+label_settings = ExtResource("4_2hrhu")
+
+[node name="OccupationTag" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 58.0
+offset_right = 118.0
+offset_bottom = 81.0
+text = "Occupation"
+label_settings = ExtResource("4_2hrhu")
 
 [node name="AgeLabel" type="Label" parent="Panel"]
-visible = false
 layout_mode = 0
-offset_left = 336.0
-offset_top = 18.0
-offset_right = 376.0
-offset_bottom = 41.0
+offset_left = 142.0
+offset_top = 87.0
+offset_right = 182.0
+offset_bottom = 110.0
+text = "69"
+label_settings = ExtResource("4_2hrhu")
+
+[node name="AgeTag" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 87.0
+offset_right = 69.0
+offset_bottom = 110.0
 text = "Age"
+label_settings = ExtResource("4_2hrhu")
 
 [node name="DescriptionLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 9.0
+offset_left = 16.0
 offset_top = 161.0
-offset_right = 627.0
-offset_bottom = 314.0
+offset_right = 552.0
+offset_bottom = 340.0
 text = "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Phasellus ultricies vel enim at volutpat. 
 Fusce sit amet magna gravida, suscipit purus finibus, varius arcu. 
 Quisque iaculis imperdiet tellus, faucibus sagittis nisl condimentum at. 
 Vivamus non sem porttitor, semper turpis at, suscipit massa. 
 "
+label_settings = ExtResource("4_2hrhu")
 autowrap_mode = 3
 
 [node name="KillButton" type="Button" parent="Panel"]
@@ -84,9 +122,16 @@ offset_right = 623.0
 offset_bottom = 42.0
 text = "Close"
 
-[node name="Dialogue" type="Label" parent="Panel"]
+[node name="Panel" type="Panel" parent="Panel"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = -134.0
-offset_right = 642.0
-offset_bottom = -67.0
+offset_top = -173.0
+offset_right = 643.0
+offset_bottom = -106.0
+
+[node name="Dialogue" type="Label" parent="Panel/Panel"]
+layout_mode = 0
+offset_right = 643.0
+offset_bottom = 67.0
+text = "Hello these are my thoughts!"
+horizontal_alignment = 1
+vertical_alignment = 1

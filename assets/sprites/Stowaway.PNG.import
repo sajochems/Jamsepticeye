@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkc4kvk7an2b1"
-path="res://.godot/imported/Layer 1.JPEG.jpg-38a1e31113a1c29493527455e4583540.ctex"
+uid="uid://duvedkcwxjmqq"
+path="res://.godot/imported/Stowaway.PNG-5598b484a6e73e1eac1a252eafcc8424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Layer 1.JPEG.jpg"
-dest_files=["res://.godot/imported/Layer 1.JPEG.jpg-38a1e31113a1c29493527455e4583540.ctex"]
+source_file="res://assets/sprites/Stowaway.PNG"
+dest_files=["res://.godot/imported/Stowaway.PNG-5598b484a6e73e1eac1a252eafcc8424.ctex"]
 
 [params]
 

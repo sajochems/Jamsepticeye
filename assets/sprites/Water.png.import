@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c872pben7enm3"
-path="res://.godot/imported/Mom.JPEG.jpg-865f140ff4fbf70810d97f50d8e847c7.ctex"
+uid="uid://djq7n2aykmiaf"
+path="res://.godot/imported/Water.png-2b16eecf9d7da31117faca1a08563b4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Mom.JPEG.jpg"
-dest_files=["res://.godot/imported/Mom.JPEG.jpg-865f140ff4fbf70810d97f50d8e847c7.ctex"]
+source_file="res://assets/sprites/Water.png"
+dest_files=["res://.godot/imported/Water.png-2b16eecf9d7da31117faca1a08563b4d.ctex"]
 
 [params]
 

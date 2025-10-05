@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qf84fjb0d5r8"
-path="res://.godot/imported/Water.JPEG.jpg-7df7d5606fdf13ae8194a8f44891ef25.ctex"
+uid="uid://cwy187k7yb07"
+path="res://.godot/imported/Scientist.png-5b66b0ed36a90a23605197ea3d382bef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Water.JPEG.jpg"
-dest_files=["res://.godot/imported/Water.JPEG.jpg-7df7d5606fdf13ae8194a8f44891ef25.ctex"]
+source_file="res://assets/sprites/Scientist.png"
+dest_files=["res://.godot/imported/Scientist.png-5b66b0ed36a90a23605197ea3d382bef.ctex"]
 
 [params]
 

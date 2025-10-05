@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0ygaytu8lkyb"
-path="res://.godot/imported/Poet.JPEG.jpg-0e36f42816d18328a18cffefb28a0fc8.ctex"
+uid="uid://b7toyk12a1ll5"
+path="res://.godot/imported/Kraken.png-5f52954580f2855813b9795bcbe46259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Poet.JPEG.jpg"
-dest_files=["res://.godot/imported/Poet.JPEG.jpg-0e36f42816d18328a18cffefb28a0fc8.ctex"]
+source_file="res://assets/sprites/Kraken.png"
+dest_files=["res://.godot/imported/Kraken.png-5f52954580f2855813b9795bcbe46259.ctex"]
 
 [params]
 
