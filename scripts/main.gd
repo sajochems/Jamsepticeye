@@ -65,6 +65,7 @@ func spawn_character(char_data: Dictionary):
 	character.age = char_data.get("age", 0)
 	character.occupation = char_data.get("occupation", "")
 	character.description = char_data.get("description", "")
+	character.dialogues = char_data.get("dialogues", "")
 	
 	# --- Load sprite or fallback to default ---
 	var sprite_path = char_data.get("sprite", DEFAULT_SPRITE)
@@ -97,7 +98,7 @@ func spawn_character(char_data: Dictionary):
 	
 func _on_character_clicked(character_ref):
 	if not game_over:
-		info_window.show_character(character_ref, Callable(self, "_on_character_killed"))
+		info_window.show_character(character_ref, Callable(self, "_on_character_killed"), state)
 		
 func _on_character_killed(character_ref):
 	if game_over or not character_ref.alive:

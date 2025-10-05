@@ -5,6 +5,7 @@ var character_tag: String
 var age: int
 var occupation: String
 var description: String
+var dialogues: Array
 var alive: bool = true
 
 signal clicked(character_ref)

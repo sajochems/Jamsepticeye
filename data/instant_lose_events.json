@@ -14,7 +14,7 @@
 	"trigger_round": 8,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "Rich guy bribes strong character"
+	"description": "Psst.. hey! Hey you! I can pay you more then whatever he's paying you! Damn that pesky rich guy! He bribed the strongest traveller to turn on you instead! "
   },
   {
 	"triggered": false,
@@ -22,30 +22,31 @@
 	"trigger_round": 9,
 	"trigger_state": 2,
 	"round_change": 0,
-	"description": "Mutiny by First mate"
+	"description": "The people are panicked.. The people are stressed.. And there's one man on this boat that knows exactly how to steer in the right direction. Unfortunately for you, you're not it."
   },
   {
 	"triggered": false,
-	"condition": "priest or doctor",
+	"condition": "priest",
 	"trigger_round": 10,
 	"trigger_state": 2,
 	"round_change": 0,
-	"description": "Mutiny by Priest or doctor"
+	"description": "People are losing faith in you, and then its oh so easy to turn to someone that allows them to have faith in something else."
+  },
+  {
+	"triggered": false,
+	"condition": "doctor",
+	"trigger_round": 10,
+	"trigger_state": 2,
+	"round_change": 0,
+	"description": "People are losing faith in you, and then its oh so easy to turn to someone that has actually been saving them."
   },
   {
 	"triggered": false,
 	"condition": "fast and not prettywoman",
-	"trigger_round": -1,
+	"trigger_round": 4,
 	"trigger_state": -1,
 	"round_change": 0,
-	"description": "You killed my love"
-  },
-  {
-	"triggered": false,
-	"condition": "furious and not prettywoman",
-	"trigger_round": 8,
-	"trigger_state": -1,
-	"round_change": 0,
-	"description": "You killed my love"
+	"description": "Really? Killing the woman your strongest rower has a crush on? Guess who's getting crushed now, idiot!"
   }
+
 ]
