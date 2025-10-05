@@ -1,0 +1,51 @@
+[
+  {
+	"triggered": false,
+	"condition": "mom and not child",
+	"trigger_round": -1,
+	"trigger_state": -1,
+	"round_change": 0,
+	"description": "I cannot believe you killed a child in front of their mother and didn't expect her to come for you...",
+  },
+
+{
+	"triggered": false,
+	"condition": "rich and fast or rich and furious or rich and mom",
+	"trigger_round": 8,
+	"trigger_state": -1,
+	"round_change": 0,
+	"description": "Rich guy bribes strong character"
+  },
+  {
+	"triggered": false,
+	"condition": "furious",
+	"trigger_round": 9,
+	"trigger_state": 2,
+	"round_change": 0,
+	"description": "Mutiny by First mate"
+  },
+  {
+	"triggered": false,
+	"condition": "priest or doctor",
+	"trigger_round": 10,
+	"trigger_state": 2,
+	"round_change": 0,
+	"description": "Mutiny by Priest or doctor"
+  },
+  {
+	"triggered": false,
+	"condition": "fast and not prettywoman",
+	"trigger_round": -1,
+	"trigger_state": -1,
+	"round_change": 0,
+	"description": "You killed my love"
+  },
+  {
+	"triggered": false,
+	"condition": "furious and not prettywoman",
+	"trigger_round": 8,
+	"trigger_state": -1,
+	"round_change": 0,
+	"description": "You killed my love"
+  }
+]

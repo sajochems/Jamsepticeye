@@ -31,7 +31,7 @@
   },
   {
 	"name": "Rower1",
-	"tag": "rower1",
+	"tag": "fast",
 	"age": 25,
 	"occupation": "Oarsman",
 	"description": "One of two rowing brothers. Strong and loyal, but deeply tied to Rower2 and in love with PrettyWoman.",
@@ -41,7 +41,7 @@
   },
   {
 	"name": "Rower2",
-	"tag": "rower2",
+	"tag": "furious",
 	"age": 23,
 	"occupation": "Oarsman",
 	"description": "Younger of the two brothers. Shares a bond with Rower1, and also in love with PrettyWoman.",

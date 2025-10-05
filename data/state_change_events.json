@@ -1,0 +1,90 @@
+[
+  {
+	"triggered": false,
+	"condition": "",
+	"trigger_round": -1,
+	"state_change": 0,
+	"round_change": 0,
+	"description": "",
+  },
+  {
+	"triggered": false,
+	"condition": "priest and not child",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "Priest loses faith bc you killed a child"
+  },
+  {
+	"triggered": false,
+	"condition": "stowaway or dog or jack and not fast and not furious and not doctor and not priest",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "Rich guy loses faith"
+  },
+  {
+	"triggered": false,
+	"condition": "child and not mother",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "People cant believe you killed a childs mother"
+  },
+  {
+	"triggered": false,
+	"condition": "not furious",
+	"trigger_round": -1,
+	"state_change": 0,
+	"round_change": 2,
+	"description": "You lost Furious"
+  },
+  {
+	"triggered": false,
+	"condition": "not fast",
+	"trigger_round": -1,
+	"state_change": 0,
+	"round_change": 1,
+	"description": "You lost Fast"
+  },
+  {
+	"triggered": false,
+	"condition": "furious and not fast",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "NOO Not my brother"
+  },
+  {
+	"triggered": false,
+	"condition": "furious and not prettywoman",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": -1,
+	"description": "You killed my crush"
+  },
+  {
+	"triggered": false,
+	"condition": "fast and not prettywoman",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": -1,
+	"description": "You killed my crush"
+  },
+  {
+	"triggered": false,
+	"condition": "child or dog",
+	"trigger_round": 8,
+	"state_change": -1,
+	"round_change": 0,
+	"description": "Its so cute"
+  },
+  {
+	"triggered": false,
+	"condition": "not doctor",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "Excuse you I want to live"
+  }
+]
