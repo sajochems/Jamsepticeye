@@ -1,8 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cm7ana525u3is"]
 
-
-[ext_resource type="Script" uid="uid://dtpxblvr8mug7" path="res://scripts/game_won.gd" id="1_dwa3i"]
-[ext_resource type="FontFile" uid="uid://bbrg44b2ldxyc" path="res://assets/treasure-map-deadhand-font/TreasureMapDeadhand-yLA3.ttf" id="2_f5ydh"]
+[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
 [ext_resource type="Texture2D" uid="uid://bleqkwgcqvt2e" path="res://assets/Victory_background.png" id="2_f5ydh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
@@ -43,7 +41,6 @@ offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.545, 1.545)
-theme_override_fonts/font = ExtResource("2_f5ydh")
 theme_override_font_sizes/font_size = 134
 text = "Congratulations! You have survived and made it to shore with the following characters on your ship:"
 label_settings = SubResource("LabelSettings_jcb1m")
@@ -93,7 +90,6 @@ offset_top = 50.0
 offset_right = 130.0
 offset_bottom = 117.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("2_f5ydh")
 theme_override_font_sizes/font_size = 110
 text = "Land! Land ahead!"
 label_settings = SubResource("LabelSettings_en71h")
