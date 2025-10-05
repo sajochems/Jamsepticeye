@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt3sc13gk1nww"]
+[gd_scene load_steps=6 format=3 uid="uid://dt3sc13gk1nww"]
 
 [ext_resource type="Script" uid="uid://d32qsw84hum8" path="res://scripts/character_info_window.gd" id="1_8r5yb"]
 [ext_resource type="StyleBox" uid="uid://chlwwfuceg0ds" path="res://assets/event_info_window.tres" id="2_3n0n8"]
 [ext_resource type="Texture2D" uid="uid://bavu6em0xil7c" path="res://assets/sprites/Sign.png" id="3_g0b2t"]
 [ext_resource type="LabelSettings" uid="uid://veo07l5p14xt" path="res://assets/brown_normal_text.tres" id="4_2hrhu"]
+[ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="5_ntyn3"]
 
 [node name="CharacterInfoWindow" type="Control"]
 layout_mode = 3
@@ -34,10 +35,10 @@ texture = ExtResource("3_g0b2t")
 
 [node name="NameLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 221.0
 offset_top = 29.0
-offset_right = 189.0
-offset_bottom = 52.0
+offset_right = 295.0
+offset_bottom = 58.0
 text = "Shrek"
 label_settings = ExtResource("4_2hrhu")
 
@@ -52,10 +53,10 @@ label_settings = ExtResource("4_2hrhu")
 
 [node name="OccupationLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 221.0
 offset_top = 58.0
-offset_right = 231.0
-offset_bottom = 81.0
+offset_right = 353.0
+offset_bottom = 87.0
 text = "Occupation"
 label_settings = ExtResource("4_2hrhu")
 
@@ -70,10 +71,10 @@ label_settings = ExtResource("4_2hrhu")
 
 [node name="AgeLabel" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 142.0
+offset_left = 221.0
 offset_top = 87.0
-offset_right = 182.0
-offset_bottom = 110.0
+offset_right = 261.0
+offset_bottom = 116.0
 text = "69"
 label_settings = ExtResource("4_2hrhu")
 
@@ -91,7 +92,7 @@ layout_mode = 0
 offset_left = 16.0
 offset_top = 161.0
 offset_right = 552.0
-offset_bottom = 340.0
+offset_bottom = 483.0
 text = "Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 Phasellus ultricies vel enim at volutpat. 
 Fusce sit amet magna gravida, suscipit purus finibus, varius arcu. 
@@ -112,6 +113,7 @@ offset_left = 861.92
 offset_top = 521.56
 offset_right = 936.92
 offset_bottom = 596.56
+theme_override_fonts/font = ExtResource("5_ntyn3")
 theme_override_font_sizes/font_size = 32
 text = "Kill"
 
@@ -122,6 +124,7 @@ offset_top = -61.0
 offset_right = 632.0
 offset_bottom = -19.0
 theme_override_colors/font_color = Color(0.74902, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_ntyn3")
 theme_override_font_sizes/font_size = 24
 text = "X"
 

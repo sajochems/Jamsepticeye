@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://4owixrdxkxv1"]
+[gd_scene load_steps=6 format=3 uid="uid://4owixrdxkxv1"]
 
 [ext_resource type="Script" uid="uid://hrxct3ojc44e" path="res://scripts/main_menu_window.gd" id="1_cy23x"]
 [ext_resource type="Texture2D" uid="uid://b0wt63t66of53" path="res://assets/Main_menu.png" id="2_onu3a"]
+[ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="3_d2q8u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cy23x"]
 bg_color = Color(0.407843, 0.235294, 0.294118, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2q8u"]
+font = ExtResource("3_d2q8u")
 
 [node name="MainMenuWindow" type="Control"]
 layout_mode = 3
@@ -32,6 +36,7 @@ offset_left = 363.0
 offset_top = 595.0
 offset_right = 563.0
 offset_bottom = 695.0
+theme_override_fonts/font = ExtResource("3_d2q8u")
 theme_override_font_sizes/font_size = 48
 text = "Start"
 
@@ -41,6 +46,7 @@ offset_left = 731.0
 offset_top = 596.0
 offset_right = 931.0
 offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("3_d2q8u")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
 
@@ -54,4 +60,5 @@ text = "You have boarded your ship on a travel to a land far away. However your 
 
 Luckily you are the captain of this ship. The crew looks at you for guidance and their deaths may  give you the opportunity to survive.
 Be wary however, your crew won't accept all your decisions. Can you survive untill you reach land?"
+label_settings = SubResource("LabelSettings_d2q8u")
 autowrap_mode = 3

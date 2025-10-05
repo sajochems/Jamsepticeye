@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://veo07l5p14xt"]
 
-[ext_resource type="FontFile" uid="uid://6ienol2ld1u7" path="res://assets/treasure-map-deadhand-font/TreasureMapDeadhand-yLA3.ttf" id="1_0dbig"]
+[ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="1_0dbig"]
 
 [resource]
 paragraph_spacing = 1.0
