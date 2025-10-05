@@ -61,3 +61,5 @@ text = "LogPanel"
 
 [node name="GameOverWindow" parent="UI" instance=ExtResource("5_tbgi4")]
 visible = false
+
+[node name="HandContainer" type="Node2D" parent="UI"]
