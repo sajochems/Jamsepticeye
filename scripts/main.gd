@@ -233,8 +233,8 @@ func show_random_hand_wave():
 	# Optional text
 	var label = Label.new()
 	label.text = random_file.split(".")[0]
-	label.position = Vector2(get_viewport_rect().size.x/2, get_viewport_rect().size.y/4)
-	label.add_theme_color_override("font_color", Color.WHITE)
+	label.position = get_viewport_rect().size / 2 - Vector2(0, 275)
+	label.add_theme_color_override("font_color", Color.BLACK)
 	hand_container.add_child(label)
 	
 	# Fade out and remove after animation

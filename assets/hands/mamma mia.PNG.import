@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgblddhqdcg3e"
-path="res://.godot/imported/IMG_6258.PNG-c7409b12673831a08e7c695c1605d9d0.ctex"
+uid="uid://cbhgm1exp5xh3"
+path="res://.godot/imported/mamma mia.PNG-835c89b15eadfe89b503badf14aaebeb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/IMG_6258.PNG"
-dest_files=["res://.godot/imported/IMG_6258.PNG-c7409b12673831a08e7c695c1605d9d0.ctex"]
+source_file="res://assets/hands/mamma mia.PNG"
+dest_files=["res://.godot/imported/mamma mia.PNG-835c89b15eadfe89b503badf14aaebeb.ctex"]
 
 [params]
 

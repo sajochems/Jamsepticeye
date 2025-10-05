@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m8lqsrbtqe1a"
-path="res://.godot/imported/IMG_6261.PNG-c80409017839e06615bc342a3753218c.ctex"
+uid="uid://tpot7nyxj3o1"
+path="res://.godot/imported/Its gonna be you.PNG-bed0468a0344e946016e206ece1ca743.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/IMG_6261.PNG"
-dest_files=["res://.godot/imported/IMG_6261.PNG-c80409017839e06615bc342a3753218c.ctex"]
+source_file="res://assets/hands/Its gonna be you.PNG"
+dest_files=["res://.godot/imported/Its gonna be you.PNG-bed0468a0344e946016e206ece1ca743.ctex"]
 
 [params]
 

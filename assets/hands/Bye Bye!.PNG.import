@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dedpvbayepnbm"
-path="res://.godot/imported/IMG_6257.PNG-14c09662cbf64b94c1f0ad68b13feaca.ctex"
+uid="uid://cuvk6d1cajoj7"
+path="res://.godot/imported/Bye Bye!.PNG-47f4c36e63d4491ec54c7c02cbdaf751.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/IMG_6257.PNG"
-dest_files=["res://.godot/imported/IMG_6257.PNG-14c09662cbf64b94c1f0ad68b13feaca.ctex"]
+source_file="res://assets/hands/Bye Bye!.PNG"
+dest_files=["res://.godot/imported/Bye Bye!.PNG-47f4c36e63d4491ec54c7c02cbdaf751.ctex"]
 
 [params]
 
