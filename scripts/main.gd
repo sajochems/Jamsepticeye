@@ -125,13 +125,13 @@ func _on_character_killed(character_ref):
 	
 	for ev in instant_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
-			trigger_game_over("You REALLY shouldn't have done that", ev.get("description", ""))
+			trigger_game_over("You REALLY shouldn't have done that", ev.get("description", ""), "")
 			return
 		
 	for ev in saveable_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
 			if events.evaluate_saveable_event(ev, alive_tags):
-				trigger_game_over("Oh no, if it isn't the consequences of your actions...", ev.get("lost_text", ""))
+				trigger_game_over("Oh no, if it isn't the consequences of your actions...", ev.get("description", ""), ev.get("lost_text", ""))
 				return
 			else:
 				#add_log(ev.get("saved_text", ""))
@@ -151,7 +151,7 @@ func _on_character_killed(character_ref):
 			ev["triggered"] = true
 			
 	if state > 3:
-		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!")
+		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!", "")
 		return
 	if round >= win_round:
 		print("Round is "  + str(round))
@@ -163,9 +163,9 @@ func _on_character_killed(character_ref):
 	
 		trigger_game_won(alive_characters)
 		
-func trigger_game_over(title: String, reason: String):
+func trigger_game_over(title: String, description: String, reason: String):
 	game_over = true
-	game_over_window.show_game_over(title, reason)
+	game_over_window.show_game_over(title, description, reason)
 	
 func trigger_game_won(characters: PackedStringArray):
 	game_over = true

@@ -50,7 +50,7 @@
 	"trigger_state": -1,
 	"round_change": 0,
 	"description": "Oh my, there seems to be some poison spray or acid coming out of the Kraken's tentacles!",
-	"lose_condition": "not jack or not cook",
+	"lose_condition": "not jack and not cook",
 	"saved_text": "Luckily someone on your crew knows enough about chemistry and acid reactions that they know just what to do",
 	"lost_text": "If only there were ANYONE on board that knows something about chemistry or gastronomy or something, that would've been a great help"
   }
