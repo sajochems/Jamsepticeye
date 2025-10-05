@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm7ana525u3is"]
+[gd_scene load_steps=5 format=3 uid="uid://cm7ana525u3is"]
 
 [ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="Texture2D" uid="uid://bleqkwgcqvt2e" path="res://assets/Victory_background.png" id="2_f5ydh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jcb1m"]
 font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_en71h"]
 font_size = 48
+font_color = Color(0, 0, 0, 1)
 
 [node name="GameWonWindow" type="Control"]
 layout_mode = 3
@@ -20,6 +22,11 @@ layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
 
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(640, 360)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_f5ydh")
+
 [node name="Text" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 8
@@ -28,9 +35,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -400.0
-offset_top = -158.0
+offset_top = -139.0
 offset_right = 400.0
-offset_bottom = 42.0
+offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Congratulations! You have survived and made it to shore with the following characters on your ship:"
@@ -46,12 +53,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -53.0
-offset_top = -85.0
-offset_right = 147.0
-offset_bottom = -35.0
+offset_left = -525.0
+offset_top = -109.0
+offset_right = -325.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "Restart"
 
 [node name="ExitButton" type="Button" parent="Panel"]
@@ -61,12 +69,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 343.0
-offset_top = -84.0
-offset_right = 543.0
-offset_bottom = -34.0
+offset_left = 286.0
+offset_top = -112.0
+offset_right = 486.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "Exit"
 
 [node name="GameWon" type="Label" parent="Panel"]
@@ -88,11 +97,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.035
-offset_left = 551.0
-offset_top = 532.0
-offset_right = 702.75
-offset_bottom = 532.25
+offset_left = 115.0
+offset_top = 564.0
+offset_right = 266.75
+offset_bottom = 564.25
 text = "Wanna try again?"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Panel"]
 layout_mode = 1
@@ -100,9 +110,9 @@ anchors_preset = -1
 anchor_right = 0.035
 anchor_bottom = 0.035
 offset_left = 925.0
-offset_top = 505.0
+offset_top = 543.0
 offset_right = 1081.75
-offset_bottom = 553.25
+offset_bottom = 591.25
 text = "Had your fill of the 
 stormy seas for one day? "
 

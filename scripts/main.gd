@@ -112,6 +112,20 @@ func _on_character_killed(character_ref):
 	if game_over or not character_ref.alive or input_locked:
 		return
 		
+	if state > 3:
+		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!", "")
+		return
+		
+	if round >= win_round:
+		print("Round is "  + str(round))
+		var alive_characters = []
+		for tag in characters.keys():
+			var char = characters[tag]
+			if char.alive:
+				alive_characters.append(char.character_name)
+	
+		trigger_game_won(alive_characters)
+		
 	#lock input while animation plays
 	input_locked = true
 	
@@ -155,18 +169,6 @@ func _on_character_killed(character_ref):
 			event_info_window.show_event_info(ev.get("description", ""))
 			ev["triggered"] = true
 			
-	if state > 3:
-		trigger_game_over("You know there's such a thing as TOO much tension, right?", "Your travellers lost all faith in your leadership.. they decided its YOU who gets sacrificed next!", "")
-		return
-	if round >= win_round:
-		print("Round is "  + str(round))
-		var alive_characters = []
-		for tag in characters.keys():
-			var char = characters[tag]
-			if char.alive:
-				alive_characters.append(char.character_name)
-	
-		trigger_game_won(alive_characters)
 		
 func trigger_game_over(title: String, description: String, reason: String):
 	game_over = true
