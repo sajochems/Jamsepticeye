@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbhgm1exp5xh3"
-path="res://.godot/imported/IMG_6259.PNG-8462c4039b305f9ab7af19732adc40f4.ctex"
+uid="uid://cncfr2hbqnm4x"
+path="res://.godot/imported/Bye Loser.PNG-7a5fa127e2edd561a3518f5dfe37b66d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/IMG_6259.PNG"
-dest_files=["res://.godot/imported/IMG_6259.PNG-8462c4039b305f9ab7af19732adc40f4.ctex"]
+source_file="res://assets/hands/Bye Loser.PNG"
+dest_files=["res://.godot/imported/Bye Loser.PNG-7a5fa127e2edd561a3518f5dfe37b66d.ctex"]
 
 [params]
 
