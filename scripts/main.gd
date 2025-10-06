@@ -144,6 +144,7 @@ func _on_character_killed(character_ref):
 				alive_characters.append(char.character_name)
 	
 		trigger_game_won(alive_characters)
+		return
 	
 	for ev in instant_lose_events:
 		if events.evaluate_instant_lose_event(ev, alive_tags, state, round):
@@ -167,18 +168,20 @@ func _on_character_killed(character_ref):
 			win_round = win_round + (events.rounds - round)
 			state = events.states
 			add_log(ev.get("description", ""))
-			add_log("Win round is now " + str(round) + " / " + str(win_round))
-			add_log("State is now " + str(state))
+			# add_log("Win round is now " + str(round) + " / " + str(win_round))
+			# add_log("State is now " + str(state))
 			event_info_window.show_event_info(ev.get("description", ""))
 			ev["triggered"] = true
 			
 		
 func trigger_game_over(title: String, description: String, reason: String):
 	game_over = true
+	event_info_window.hide()
 	game_over_window.show_game_over(title, description, reason)
 	
 func trigger_game_won(characters: PackedStringArray):
 	game_over = true
+	event_info_window.hide()
 	game_won_window.show_game_won(characters)
 	
 func update_round_label():

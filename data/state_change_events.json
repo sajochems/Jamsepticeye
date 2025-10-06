@@ -9,13 +9,22 @@
   },
   {
 	"triggered": false,
-	"condition": "rich and stowaway and not fast or rich and stowaway and not furious or rich and stowaway and not doctor or rich and dog and not fast or rich and dog and not furious or rich and dog and not doctor or rich and jack and not fast or rich and jack and not furious or rich and jack and not doctor
-",
+	"condition": "rich and stowaway and not fast or rich and stowaway and not furious or rich and stowaway and not doctor",
+	"trigger_round": -1,
+	"state_change": 1,
+	"round_change": 0,
+	"description": "Really? Did you not see those moving eyes in the crate?"
+  },
+
+  {
+	"triggered": false,
+	"condition": "rich and dog and not fast or rich and dog and not furious or rich and dog and not doctor",
 	"trigger_round": -1,
 	"state_change": 1,
 	"round_change": 0,
 	"description": "Really? Of all people you could choose, you choose them? How can your richest travellers now believe you make competent choices."
   },
+
   {
 	"triggered": false,
 	"condition": "child and not mom",

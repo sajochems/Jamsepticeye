@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cm7ana525u3is"]
 
-[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="Script" uid="uid://dtpxblvr8mug7" path="res://scripts/game_won.gd" id="1_dwa3i"]
 [ext_resource type="Texture2D" uid="uid://bleqkwgcqvt2e" path="res://assets/Victory_background.png" id="2_f5ydh"]
 [ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="3_v4avr"]
 
@@ -135,8 +135,8 @@ label_settings = SubResource("LabelSettings_45nmd")
 
 [node name="Characters" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 364.0
-offset_top = 319.0
-offset_right = 839.0
-offset_bottom = 491.0
+offset_left = 368.0
+offset_top = 421.0
+offset_right = 843.0
+offset_bottom = 593.0
 horizontal_alignment = 1
