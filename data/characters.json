@@ -116,7 +116,7 @@
 	"occupation": "Scientist",
 	"description": "A man of science always playing around with new formulas. His last experiment splashed his eye but I'm sure this is not a problem ",
 	"dialogues": ["Hey, I'm Jack, top of the morning to ya", "I'm a man of science, I'm doing important research, please leave me alone", "It's clear this captain is not a scholar because there is ZERO logic in this decisions"],
-	"sprite": "res://assets/sprites/Scientist.png",
+	"sprite": "res://assets/sprites/Jack.png",
 	"x": 0.6,
 	"y": 0.55
   },
