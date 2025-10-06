@@ -15,6 +15,21 @@ var events = Events.new()
 @onready var game_won_window := $UI/GameWonWindow
 @onready var event_info_window := $UI/EventInfoWindow
 @onready var hands_folder := "res://assets/hands/"
+var hand_textures: Array = [
+	{"name": "Bye Bye!", "tex": preload("res://assets/hands/Bye Bye!.png")},
+	{"name": "Bye Loser", "tex": preload("res://assets/hands/Bye Loser.png")},
+	{"name": "It's gonna be you", "tex": preload("res://assets/hands/Its gonna be you.png")},
+	{"name": "It's you", "tex": preload("res://assets/hands/its you.png")},
+	{"name": "Kay bye", "tex": preload("res://assets/hands/kay bye.png")},
+	{"name": "Love ya, bye!", "tex": preload("res://assets/hands/Love ya, bye!.png")},
+	{"name": "Mamma mia", "tex": preload("res://assets/hands/mamma mia.png")},
+	{"name": "Nice", "tex": preload("res://assets/hands/nice.png")},
+	{"name": "Peace Out!", "tex": preload("res://assets/hands/Peace Out!.png")},
+	{"name": "Pew Pew!", "tex": preload("res://assets/hands/Pew Pew!.png")},
+	{"name": "Rock On!", "tex": preload("res://assets/hands/Rock On!.png")}
+]
+
+
 @onready var hand_container := $UI/HandContainer
 @onready var round_label := $UI/RoundLabel
 @onready var log_panel := $UI/ScrollContainer/LogPanel
@@ -257,49 +272,39 @@ func animate_character_death(character_ref):
 	return tween
 	
 func show_random_hand_wave():
-	var dir = DirAccess.open(hands_folder)
-	if not dir:
+	if hand_textures.size() == 0:
 		return
+		
+	# Pick a random hand
+	var choice = hand_textures[randi() % hand_textures.size()]
+	var tex = choice["tex"]
+	var hand_name = choice["name"]
 	
-	var all_files: PackedStringArray = dir.get_files()
-	var files := []  # normal Array to hold only real images
-	for f in all_files:
-		if not f.ends_with(".import"):
-			files.append(f)
-		if files.size() == 0:
-			return
-	
-	var random_file = files[randi() % files.size()]
-	var tex = load(hands_folder + random_file)
-	if not tex:
-		return
-	
-	# Create a temporary sprite
+	# Create a temporary sprite for the hand
 	var sprite = Sprite2D.new()
 	sprite.centered = true
 	sprite.texture = tex
-	sprite.scale = Vector2(0.3, 0.3)  # 50% of original size
+	sprite.scale = Vector2(0.3, 0.3)
 	sprite.modulate.a = 0.0
-	sprite.position =  get_viewport_rect().size / 2
+	sprite.position = get_viewport_rect().size / 2
 	hand_container.add_child(sprite)
 	
 	# --- Create a panel to hold the label ---
 	var panel = Panel.new()
 	panel.position = get_viewport_rect().size / 2 - Vector2(125, 300)  # Centered offset
-	panel.custom_minimum_size = Vector2(250, 60)  # Define a fixed visible area
-
-	# --- Add a background style ---
+	panel.custom_minimum_size = Vector2(250, 60)
+	
 	var panel_style = StyleBoxFlat.new()
-	panel_style.bg_color = Color(0, 0, 0, 0.5)  # opaque black with 75% alpha
+	panel_style.bg_color = Color(0, 0, 0, 0.5)
 	panel_style.corner_radius_top_left = 10
 	panel_style.corner_radius_top_right = 10
 	panel_style.corner_radius_bottom_left = 10
 	panel_style.corner_radius_bottom_right = 10
 	panel.add_theme_stylebox_override("panel", panel_style)
 
-	# --- Create and style the label ---
+ 	# --- Create and style the label ---
 	var label = Label.new()
-	label.text = random_file.split(".")[0]
+	label.text = hand_name
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	label.add_theme_color_override("font_color", Color.WHITE)
@@ -308,25 +313,23 @@ func show_random_hand_wave():
 	label.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	label.anchor_right = 1
 	label.anchor_bottom = 1
-
-	# --- Add and show ---
+	
 	panel.add_child(label)
 	hand_container.add_child(panel)
-	#panel.z_index = 200  # make sure it renders above other UI
 	
-	# Fade out and remove after animation
+	# --- Fade in/out tween ---
 	var tween = create_tween()
 	tween.tween_property(sprite, "modulate:a", 1.0, 1.5)
 	tween.tween_property(label, "modulate:a", 1.0, 1.5)
-	
 	tween.tween_interval(0.5)
-	
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.5)
 	tween.tween_property(label, "modulate:a", 0.0, 0.5)
 	tween.tween_callback(Callable(sprite, "queue_free"))
-	tween.tween_callback(Callable(label, "queue_free"))	
+	tween.tween_callback(Callable(label, "queue_free"))
 	tween.tween_callback(Callable(panel, "queue_free"))
+	
 	return tween
+	
 	
 func restart_game():
 	# Hide windows

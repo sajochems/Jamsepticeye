@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cm7ana525u3is"]
 
-[ext_resource type="Script" uid="uid://dtpxblvr8mug7" path="res://scripts/game_won.gd" id="1_dwa3i"]
+[ext_resource type="Script" path="res://scripts/game_won.gd" id="1_dwa3i"]
 [ext_resource type="Texture2D" uid="uid://bleqkwgcqvt2e" path="res://assets/Victory_background.png" id="2_f5ydh"]
 [ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="3_v4avr"]
 
@@ -22,15 +22,20 @@ font = ExtResource("3_v4avr")
 
 [node name="GameWonWindow" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_dwa3i")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
 position = Vector2(640, 360)

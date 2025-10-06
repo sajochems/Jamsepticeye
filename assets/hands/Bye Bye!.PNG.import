@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuvk6d1cajoj7"
-path="res://.godot/imported/Bye Bye!.PNG-47f4c36e63d4491ec54c7c02cbdaf751.ctex"
+path="res://.godot/imported/Bye Bye!.png-b6a94a08682f9f6a8027448df3cab93e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/Bye Bye!.PNG"
-dest_files=["res://.godot/imported/Bye Bye!.PNG-47f4c36e63d4491ec54c7c02cbdaf751.ctex"]
+source_file="res://assets/hands/Bye Bye!.png"
+dest_files=["res://.godot/imported/Bye Bye!.png-b6a94a08682f9f6a8027448df3cab93e.ctex"]
 
 [params]
 

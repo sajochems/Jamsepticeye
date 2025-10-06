@@ -139,7 +139,7 @@
 	"occupation": "",
 	"description": "A hidden passenger who boarded illegally. Nobody knows his name but he looks like a snake to me!",
 	"dialogues": ["...", "If I don't move maybe he won't see me", "CRATE. I am a crate. Look away please! I just want to make it to shore, I didn't have any money for a ticket. "],
-	"sprite": "res://assets/sprites/stowaway.png",
+	"sprite": "res://assets/sprites/Stowaway.png",
 	"x": 0.52,
 	"y": 0.3
   }

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m8lqsrbtqe1a"
-path="res://.godot/imported/Love ya, bye!.PNG-b1a2b79c29a4707099892af7fc373014.ctex"
+path="res://.godot/imported/Love ya, bye!.png-f67ebab248501280360bf7c56026324a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/Love ya, bye!.PNG"
-dest_files=["res://.godot/imported/Love ya, bye!.PNG-b1a2b79c29a4707099892af7fc373014.ctex"]
+source_file="res://assets/hands/Love ya, bye!.png"
+dest_files=["res://.godot/imported/Love ya, bye!.png-f67ebab248501280360bf7c56026324a.ctex"]
 
 [params]
 

@@ -14,8 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://cm7ana525u3is" path="res://scenes/game_won_window.tscn" id="6_tefeu"]
 [ext_resource type="Texture2D" uid="uid://bymvkxx7hdhjf" path="res://assets/sprites/Wheel.png" id="6_trceg"]
 [ext_resource type="PackedScene" uid="uid://4owixrdxkxv1" path="res://scenes/main_menu_window.tscn" id="7_o6xl0"]
-[ext_resource type="Texture2D" uid="uid://b5s8yemvv8suo" path="res://assets/sprites/Vertical_sign.PNG" id="9_trceg"]
-[ext_resource type="Texture2D" uid="uid://cagxnryquohnv" path="res://assets/sprites/long_sign.PNG" id="10_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://b5s8yemvv8suo" path="res://assets/sprites/Vertical_sign.png" id="9_trceg"]
+[ext_resource type="Texture2D" uid="uid://cagxnryquohnv" path="res://assets/sprites/long_sign.png" id="10_a8y0u"]
 [ext_resource type="FontFile" uid="uid://dajdjcpboafyk" path="res://assets/Primitive-4yGY.ttf" id="12_muem4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jyhfs"]
@@ -104,8 +104,6 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
 offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="RoundSign" type="Sprite2D" parent="UI"]
 z_index = -1

@@ -4,7 +4,7 @@ const CHARACTERS_JSON := "res://data/characters.json"
 const INSTANT_LOSE_EVENTS_JSON := "res://data/instant_lose_events.json"
 const SAVEABLE_LOSE_EVENTS_JSON := "res://data/saveable_lose_events.json"
 const STATE_CHANGE_EVENTS_JSON := "res://data/state_change_events.json"
-const DEFAULT_SPRITE := "res://assets/sprites/default.png"
+const DEFAULT_SPRITE := "res://assets/sprites/Rower1.png"
 
 @export var state_change_events: Array = []
 @export var saveable_death_events: Array = []

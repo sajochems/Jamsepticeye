@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5s8yemvv8suo"
-path="res://.godot/imported/Vertical_sign.PNG-b54cb798691b176ec9c95a729b371cf4.ctex"
+path="res://.godot/imported/Vertical_sign.png-88f7d861037400e153da00b725f48857.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Vertical_sign.PNG"
-dest_files=["res://.godot/imported/Vertical_sign.PNG-b54cb798691b176ec9c95a729b371cf4.ctex"]
+source_file="res://assets/sprites/Vertical_sign.png"
+dest_files=["res://.godot/imported/Vertical_sign.png-88f7d861037400e153da00b725f48857.ctex"]
 
 [params]
 

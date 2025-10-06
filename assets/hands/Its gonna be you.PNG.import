@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://tpot7nyxj3o1"
-path="res://.godot/imported/Its gonna be you.PNG-bed0468a0344e946016e206ece1ca743.ctex"
+path="res://.godot/imported/Its gonna be you.png-7667eda7794b9c106894981d8873f215.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/hands/Its gonna be you.PNG"
-dest_files=["res://.godot/imported/Its gonna be you.PNG-bed0468a0344e946016e206ece1ca743.ctex"]
+source_file="res://assets/hands/Its gonna be you.png"
+dest_files=["res://.godot/imported/Its gonna be you.png-7667eda7794b9c106894981d8873f215.ctex"]
 
 [params]
 
